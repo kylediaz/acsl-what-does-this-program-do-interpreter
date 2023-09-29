@@ -1,0 +1,1 @@
+(cd ./grammar; antlr4 -Dlanguage=JavaScript -o "../parser" "WDTPD.g4")
