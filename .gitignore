@@ -1,2 +1,8 @@
 .venv
+bin
 grammar/.antlr/*
+parser/WDTPD.interp
+parser/WDTPD.tokens
+.gitignore
+parser/WDTPDLexer.interp
+parser/WDTPDLexer.tokens
