@@ -1,83 +1,90 @@
 grammar WDTPD;	
 
-prog: stmt+ EOF;
+options { caseInsensitive = true; }
+
+prog: stmt_list EOF;
+stmt_list: stmt+;
 
 // Logical Blocks
 
 stmt: 
       input
     | output
-    | assignment
-    | array_assignment
     | if_stmt
     | while_stmt
-    | for_loop_stmt;
+    | for_loop_stmt
+    | assignment_list
+    ;
 
-id_list: ID (',' WS ID)*;
+id_list: id (',' id)*;
 
-input: 'INPUT' WS id_list;
-output: 'OUTPUT' WS id_list;
+input: 'INPUT' id_list;
+output: 'OUTPUT' expression+;
 
-assignment: ID '=' expression;
-array_assignment: array_reference '=' expression;
+assignment_list: assignment (':' assignment)*;
+assignment: (id | array_reference) '=' expression;
 
 if_stmt: 
-    'IF' WS expression WS 'THEN' WS 
-        stmt+ 
-    ('ELSE' WS
-        stmt+
+    'IF' expression 'THEN' 
+        stmt_list 
+    ('ELSE'
+        stmt_list
     )? 
-    'END IF';
+    'END IF'?;
 
 while_stmt: 
-    'WHILE' WS expression WS
-        stmt+ 
+    'WHILE' expression
+        stmt_list
     'END WHILE';
 
 for_loop_stmt: 
-    'FOR' WS assignment WS 'TO' WS expression WS 'STEP' WS expression WS
-        stmt+
+    'FOR' assignment 'TO' expression ('STEP' expression)?
+        stmt_list
     'NEXT';
-
+    
 // Expressions
 
-expression: term | expression ('+' | '-') expression;
-term: factor | term ('*' | '/') term;
-factor: '!' factor | operand;
-operand: ID | LITERAL | array_reference | str_slice | '(' expression ')';
-array_reference: ID '(' expression ')';
-str_slice: ID '[' expression (':' expression)? ']';
+params: expression*;
+
+expression: conditional_or_expr;
+conditional_or_expr: conditional_and_expr | conditional_or_expr '||' conditional_or_expr;
+conditional_and_expr: or_expr | conditional_and_expr '&&' or_expr;
+or_expr: and_expr | or_expr '|' and_expr;
+and_expr: equality_expr | and_expr '&' equality_expr;
+
+equality_expr: relational_expr | equality_expr ('==' | '!=') relational_expr;
+relational_expr: additive_expr | relational_expr ('<' | '>' | '>=' | '<=') additive_expr;
+
+additive_expr: multiplicative_expr | additive_expr ('+' | '-') multiplicative_expr;
+multiplicative_expr: exponent_expr | multiplicative_expr ('*' | '/' | '%') exponent_expr;
+exponent_expr: unary_expr | exponent_expr ('^' | '↑' |'**') unary_expr;
+unary_expr
+    : primary_expr
+    | ('+' unary_expr
+    | '-' unary_expr
+    | '!' unary_expr
+    );
+
+primary_expr: id | literal | function_call | array_reference | str_slice | '(' expression ')';
+
+function_call: function_name '(' expression ')';
+function_name: ABS | INT_FUNC | SQRT | LEN; 
+
+array_reference: id '(' additive_expr ')';
+str_slice: id '[' expression (':' expression)? ']';
+
+id: ID;
+
+literal
+    : number
+    | STRING
+    | BOOLEAN
+    | NULL
+    ;
+    
+number: DASH? INTEGER;
 
 // Lexer
-
-ID
-   : [a-zA-Z] [a-zA-Z0-9]*
-   ;
-
-LITERAL
-   : INTEGER
-   | STRING
-   | 'true'
-   | 'false'
-   | 'null'
-   ;
-
-INTEGER
-   : [0-9]+
-   ;
-
-STRING
-   : '"' ~ '"'* '"'
-   | '\'' ~ '\''* '\''
-   ;
-
-COMMENT
-   : '//' ~ [\r\n]* -> skip
-   ;
-
-WS
-   : [ \r\n\t]+ -> skip
-   ;
 
 COMMA: ',';
 NOT: '!';
@@ -101,6 +108,11 @@ CLOSE_PAREN: ')';
 OPEN_BRACKET: '[';
 CLOSE_BRACKET: ']';
 
+ABS:      'abs';
+LEN:      'len';
+SQRT:     'sqrt';
+INT_FUNC: 'int';
+
 IF: 'IF';
 THEN: 'THEN';
 END_IF: 'END IF';
@@ -110,3 +122,35 @@ FOR: 'FOR';
 TO: 'TO';
 STEP: 'STEP';
 NEXT: 'NEXT';
+INPUT: 'INPUT';
+OUTPUT: 'OUTPUT';
+
+ID
+   : [A-Z] [A-Z0-9]*
+   ;
+ 
+STRING
+   : '"' ~ '"'* '"'
+   | '\'' ~ '\''* '\''
+   ;
+
+INTEGER
+   : [0-9]+
+   ;
+   
+BOOLEAN
+    : 'False'
+    | 'True'
+    ;
+
+NULL
+    : 'null'
+    | 'None';
+
+COMMENT
+   : '//' ~ [\r\n]* -> skip
+   ;
+
+WS: [ \r\n\t]+ -> skip;
+   
+NL: '\n'+;
