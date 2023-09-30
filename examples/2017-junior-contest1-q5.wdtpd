@@ -1,0 +1,7 @@
+a = 12: b = 1: c = 0: d = 4 : e = 2
+if a > d then a = a - d
+if (d – b) < (e – a) then d = d + e
+if a * b == d * e then e = a * b / e else d = d * e / a
+if d ^ 2 < = (b + 1) ^ 2 then d = b + 1 else b = b + 1
+if a + b * c == d + e * c then a = b * c else d = e * c
+output (a + e) / b + (d + c) ^ b * c
