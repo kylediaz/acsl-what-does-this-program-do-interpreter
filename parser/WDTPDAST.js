@@ -69,6 +69,10 @@ function parseExpression(expr, rawInput) {
         }
     }
 
+    if (expr.ruleIndex == WDTPDParser.RULE_paren_expr) {
+        return parseExpression(expr.children[1]);
+    }
+
     // Just use the raw symbol for unary and binary operations
     if (expr.ruleIndex == WDTPDParser.RULE_unary_expr) {
         let symbol = expr.children[0];

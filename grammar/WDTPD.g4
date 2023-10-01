@@ -2,8 +2,8 @@ grammar WDTPD;
 
 options { caseInsensitive = true; }
 
-prog: stmt_list EOF;
-stmt_list: stmt+;
+prog: stmt_list;
+stmt_list: (stmt (NL | EOF))*;
 
 // Logical Blocks
 
@@ -24,21 +24,26 @@ output: 'OUTPUT' expression+;
 assignment_list: assignment (':' assignment)*;
 assignment: (id | array_reference) '=' expression;
 
-if_stmt: 
-    'IF' expression 'THEN' 
+if_stmt
+    : 
+    (
+    'IF' expression 'THEN' NL
         stmt_list 
-    ('ELSE'
+    ('ELSE' NL
         stmt_list
     )? 
-    'END IF'?;
+    'END IF'
+    ) 
+    | ('IF' expression 'THEN' stmt ('ELSE' stmt)?);
+
 
 while_stmt: 
-    'WHILE' expression
+    'WHILE' expression NL
         stmt_list
     'END WHILE';
 
 for_loop_stmt: 
-    'FOR' assignment 'TO' expression ('STEP' expression)?
+    'FOR' assignment 'TO' expression ('STEP' expression)? NL
         stmt_list
     'NEXT';
     
@@ -65,7 +70,9 @@ unary_expr
     | '!' unary_expr
     );
 
-primary_expr: id | literal | function_call | array_reference | str_slice | '(' expression ')';
+primary_expr: id | literal | function_call | array_reference | str_slice | paren_expr;
+
+paren_expr: '(' expression ')';
 
 function_call: function_name '(' expression ')';
 function_name: ABS | INT_FUNC | SQRT | LEN; 
@@ -123,7 +130,7 @@ TO: 'TO';
 STEP: 'STEP';
 NEXT: 'NEXT';
 INPUT: 'INPUT';
-OUTPUT: 'OUTPUT';
+OUTPUT: 'OUTPUT' | 'PRINT';
 
 ID
    : [A-Z] [A-Z0-9]*
@@ -151,6 +158,6 @@ COMMENT
    : '//' ~ [\r\n]* -> skip
    ;
 
-WS: [ \r\n\t]+ -> skip;
+WS: [ \t]+ -> skip;
    
-NL: '\n'+;
+NL: ('\r'? '\n');

@@ -221,6 +221,15 @@ export default class WDTPDListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by WDTPDParser#paren_expr.
+	enterParen_expr(ctx) {
+	}
+
+	// Exit a parse tree produced by WDTPDParser#paren_expr.
+	exitParen_expr(ctx) {
+	}
+
+
 	// Enter a parse tree produced by WDTPDParser#function_call.
 	enterFunction_call(ctx) {
 	}

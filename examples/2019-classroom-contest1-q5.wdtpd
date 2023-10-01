@@ -1,0 +1,28 @@
+//
+//
+a = 12 : b = 6 : c = 3 : d = 2
+if a == b * d then
+e = a / b
+end if
+if b - d == a / c then
+e = e + a / c
+end if
+e = a / c - e
+if b / c == a / e then
+a = 2 * d
+else
+a = 2 * e
+end if
+if (a < b) || (c < d) then
+a = a + b
+else
+c = c + d
+end if
+if (a < d) && (b + c > c * c) then
+d = a + c
+else
+c = d - b
+end if
+x = b / a + c * e / (d + b) - (b + d) / a * a
+print x
+end

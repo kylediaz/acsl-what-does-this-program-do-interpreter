@@ -66,25 +66,21 @@ export default class WDTPDInterpreter {
     }
 
     run(code) {
-        console.log("Parsing");
         let program = parse(code);
-        console.log("AST:", program);
 
         this.trace = [];
+        this.capture("Start program");
         try {
-            this.capture("Start program program");
             program.forEach((stmt) => this.execute(stmt));
         } catch (err) {
             console.error(err);
         }
         this.capture("End program");
-        console.log("trace:", this.trace);
     }
 
     // Env: variable names are case insensitive
 
     updateEnv(key, value) {
-        console.log(key, "=", value);
         if (key.type == "id") {
             this.env[key.id] = value;
         } else {
@@ -116,11 +112,11 @@ export default class WDTPDInterpreter {
                 let expression = stmt.expression;
                 let value = this.evaluate(expression);
                 this.updateEnv(lhs, value);
-                this.capture("Assigned", lhs.id);
+                //this.capture("Assigned", lhs.id);
                 break;
             case "if_stmt":
                 let condition = this.evaluate(stmt.condition);
-                this.capture("If statement", condition);
+                this.capture("If statement, condition evaluates to", condition);
                 if (condition) {
                     this.executeStmts(stmt.stmts);
                 }
