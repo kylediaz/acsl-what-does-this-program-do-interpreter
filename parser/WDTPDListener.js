@@ -86,6 +86,24 @@ export default class WDTPDListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by WDTPDParser#multi_line_if_stmt.
+	enterMulti_line_if_stmt(ctx) {
+	}
+
+	// Exit a parse tree produced by WDTPDParser#multi_line_if_stmt.
+	exitMulti_line_if_stmt(ctx) {
+	}
+
+
+	// Enter a parse tree produced by WDTPDParser#single_line_if_stmt.
+	enterSingle_line_if_stmt(ctx) {
+	}
+
+	// Exit a parse tree produced by WDTPDParser#single_line_if_stmt.
+	exitSingle_line_if_stmt(ctx) {
+	}
+
+
 	// Enter a parse tree produced by WDTPDParser#while_stmt.
 	enterWhile_stmt(ctx) {
 	}
@@ -290,6 +308,15 @@ export default class WDTPDListener extends antlr4.tree.ParseTreeListener {
 
 	// Exit a parse tree produced by WDTPDParser#number.
 	exitNumber(ctx) {
+	}
+
+
+	// Enter a parse tree produced by WDTPDParser#endOfStatement.
+	enterEndOfStatement(ctx) {
+	}
+
+	// Exit a parse tree produced by WDTPDParser#endOfStatement.
+	exitEndOfStatement(ctx) {
 	}
 
 

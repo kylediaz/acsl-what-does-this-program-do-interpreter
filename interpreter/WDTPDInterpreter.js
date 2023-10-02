@@ -56,6 +56,7 @@ let functions = {
 export default class WDTPDInterpreter {
     constructor() {
         this.env = {} // Stores variable => value mappings
+
         this.functions = functions;
 
         this.input = null;
@@ -74,8 +75,10 @@ export default class WDTPDInterpreter {
             program.forEach((stmt) => this.execute(stmt));
         } catch (err) {
             console.error(err);
+            return false;
         }
         this.capture("End program");
+        return true;
     }
 
     // Env: variable names are case insensitive
@@ -97,6 +100,10 @@ export default class WDTPDInterpreter {
     }
 
     execute(stmt) {
+        if (stmt == null) {
+            return
+        }
+
         this.executions += 1;
         if (this.executions >= this.maxExecutions) {
             this.stopped = true;
@@ -118,7 +125,9 @@ export default class WDTPDInterpreter {
                 let condition = this.evaluate(stmt.condition);
                 this.capture("If statement, condition evaluates to", condition);
                 if (condition) {
-                    this.executeStmts(stmt.stmts);
+                    this.executeStmts(stmt.onTrueBody);
+                } else {
+                    this.executeStmts(stmt.onFalseBody)
                 }
                 break;
             case "while_loop":
@@ -154,6 +163,7 @@ export default class WDTPDInterpreter {
                 let outputExprs = stmt.exprs;
                 let outputValues = outputExprs.map((e) => this.evaluate(e));
                 outputValues.forEach(this.output)
+                this.capture("OUTPUT", outputValues);
                 break;
             default:
                 console.error("Unimplemented execution type", stmt.type);

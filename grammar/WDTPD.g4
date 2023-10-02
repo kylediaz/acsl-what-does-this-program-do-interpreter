@@ -3,7 +3,7 @@ grammar WDTPD;
 options { caseInsensitive = true; }
 
 prog: stmt_list;
-stmt_list: (stmt (NL | EOF))*;
+stmt_list: (stmt (endOfStatement|EOF))*;
 
 // Logical Blocks
 
@@ -24,17 +24,16 @@ output: 'OUTPUT' expression+;
 assignment_list: assignment (':' assignment)*;
 assignment: (id | array_reference) '=' expression;
 
-if_stmt
-    : 
-    (
-    'IF' expression 'THEN' NL
+if_stmt: multi_line_if_stmt | single_line_if_stmt;
+
+multi_line_if_stmt:
+   'IF' expression 'THEN' NL
         stmt_list 
     ('ELSE' NL
         stmt_list
     )? 
-    'END IF'
-    ) 
-    | ('IF' expression 'THEN' stmt ('ELSE' stmt)?);
+    'END IF';
+single_line_if_stmt: 'IF' expression 'THEN' stmt ('ELSE' stmt)?;
 
 
 while_stmt: 
@@ -90,6 +89,8 @@ literal
     ;
     
 number: DASH? INTEGER;
+
+endOfStatement: NL<hidden>;
 
 // Lexer
 
