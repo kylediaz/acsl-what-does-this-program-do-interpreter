@@ -2,109 +2,111 @@
 // jshint ignore: start
 import antlr4 from 'https://cdn.jsdelivr.net/npm/antlr4@4.13.1/+esm'
 import WDTPDListener from './WDTPDListener.js';
-const serializedATN = [4,1,52,331,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,
+const serializedATN = [4,1,58,340,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,
 4,2,5,7,5,2,6,7,6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,
 2,13,7,13,2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,
 20,7,20,2,21,7,21,2,22,7,22,2,23,7,23,2,24,7,24,2,25,7,25,2,26,7,26,2,27,
 7,27,2,28,7,28,2,29,7,29,2,30,7,30,2,31,7,31,2,32,7,32,2,33,7,33,2,34,7,
-34,1,0,1,0,1,1,1,1,1,1,3,1,76,8,1,5,1,78,8,1,10,1,12,1,81,9,1,1,2,1,2,1,
-2,1,2,1,2,1,2,3,2,89,8,2,1,3,1,3,1,3,5,3,94,8,3,10,3,12,3,97,9,3,1,4,1,4,
-1,4,1,5,1,5,4,5,104,8,5,11,5,12,5,105,1,6,1,6,1,6,5,6,111,8,6,10,6,12,6,
-114,9,6,1,7,1,7,3,7,118,8,7,1,7,1,7,1,7,1,8,1,8,3,8,125,8,8,1,9,1,9,1,9,
-1,9,1,9,1,9,1,9,1,9,3,9,135,8,9,1,9,1,9,1,10,1,10,1,10,1,10,1,10,1,10,3,
-10,145,8,10,1,11,1,11,1,11,1,11,1,11,1,11,1,12,1,12,1,12,1,12,1,12,1,12,
-3,12,159,8,12,1,12,1,12,1,12,1,12,1,13,5,13,166,8,13,10,13,12,13,169,9,13,
-1,14,1,14,1,15,1,15,1,15,1,15,1,15,1,15,5,15,179,8,15,10,15,12,15,182,9,
-15,1,16,1,16,1,16,1,16,1,16,1,16,5,16,190,8,16,10,16,12,16,193,9,16,1,17,
-1,17,1,17,1,17,1,17,1,17,5,17,201,8,17,10,17,12,17,204,9,17,1,18,1,18,1,
-18,1,18,1,18,1,18,5,18,212,8,18,10,18,12,18,215,9,18,1,19,1,19,1,19,1,19,
-1,19,1,19,5,19,223,8,19,10,19,12,19,226,9,19,1,20,1,20,1,20,1,20,1,20,1,
-20,5,20,234,8,20,10,20,12,20,237,9,20,1,21,1,21,1,21,1,21,1,21,1,21,5,21,
-245,8,21,10,21,12,21,248,9,21,1,22,1,22,1,22,1,22,1,22,1,22,5,22,256,8,22,
-10,22,12,22,259,9,22,1,23,1,23,1,23,1,23,1,23,1,23,5,23,267,8,23,10,23,12,
-23,270,9,23,1,24,1,24,1,24,1,24,1,24,1,24,1,24,3,24,279,8,24,3,24,281,8,
-24,1,25,1,25,1,25,1,25,1,25,1,25,3,25,289,8,25,1,26,1,26,1,26,1,26,1,27,
-1,27,1,27,1,27,1,27,1,28,1,28,1,29,1,29,1,29,1,29,1,29,1,30,1,30,1,30,1,
-30,1,30,3,30,312,8,30,1,30,1,30,1,31,1,31,1,32,1,32,1,32,1,32,3,32,322,8,
-32,1,33,3,33,325,8,33,1,33,1,33,1,34,1,34,1,34,0,9,30,32,34,36,38,40,42,
-44,46,35,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,
-46,48,50,52,54,56,58,60,62,64,66,68,0,6,1,0,21,22,1,0,17,20,1,0,15,16,1,
-0,12,14,1,0,6,8,1,0,30,33,333,0,70,1,0,0,0,2,79,1,0,0,0,4,88,1,0,0,0,6,90,
-1,0,0,0,8,98,1,0,0,0,10,101,1,0,0,0,12,107,1,0,0,0,14,117,1,0,0,0,16,124,
-1,0,0,0,18,126,1,0,0,0,20,138,1,0,0,0,22,146,1,0,0,0,24,152,1,0,0,0,26,167,
-1,0,0,0,28,170,1,0,0,0,30,172,1,0,0,0,32,183,1,0,0,0,34,194,1,0,0,0,36,205,
-1,0,0,0,38,216,1,0,0,0,40,227,1,0,0,0,42,238,1,0,0,0,44,249,1,0,0,0,46,260,
-1,0,0,0,48,280,1,0,0,0,50,288,1,0,0,0,52,290,1,0,0,0,54,294,1,0,0,0,56,299,
-1,0,0,0,58,301,1,0,0,0,60,306,1,0,0,0,62,315,1,0,0,0,64,321,1,0,0,0,66,324,
-1,0,0,0,68,328,1,0,0,0,70,71,3,2,1,0,71,1,1,0,0,0,72,75,3,4,2,0,73,76,3,
-68,34,0,74,76,5,0,0,1,75,73,1,0,0,0,75,74,1,0,0,0,76,78,1,0,0,0,77,72,1,
-0,0,0,78,81,1,0,0,0,79,77,1,0,0,0,79,80,1,0,0,0,80,3,1,0,0,0,81,79,1,0,0,
-0,82,89,3,8,4,0,83,89,3,10,5,0,84,89,3,16,8,0,85,89,3,22,11,0,86,89,3,24,
-12,0,87,89,3,12,6,0,88,82,1,0,0,0,88,83,1,0,0,0,88,84,1,0,0,0,88,85,1,0,
-0,0,88,86,1,0,0,0,88,87,1,0,0,0,89,5,1,0,0,0,90,95,3,62,31,0,91,92,5,9,0,
-0,92,94,3,62,31,0,93,91,1,0,0,0,94,97,1,0,0,0,95,93,1,0,0,0,95,96,1,0,0,
-0,96,7,1,0,0,0,97,95,1,0,0,0,98,99,5,43,0,0,99,100,3,6,3,0,100,9,1,0,0,0,
-101,103,5,1,0,0,102,104,3,28,14,0,103,102,1,0,0,0,104,105,1,0,0,0,105,103,
-1,0,0,0,105,106,1,0,0,0,106,11,1,0,0,0,107,112,3,14,7,0,108,109,5,25,0,0,
-109,111,3,14,7,0,110,108,1,0,0,0,111,114,1,0,0,0,112,110,1,0,0,0,112,113,
-1,0,0,0,113,13,1,0,0,0,114,112,1,0,0,0,115,118,3,62,31,0,116,118,3,58,29,
-0,117,115,1,0,0,0,117,116,1,0,0,0,118,119,1,0,0,0,119,120,5,2,0,0,120,121,
-3,28,14,0,121,15,1,0,0,0,122,125,3,18,9,0,123,125,3,20,10,0,124,122,1,0,
-0,0,124,123,1,0,0,0,125,17,1,0,0,0,126,127,5,34,0,0,127,128,3,28,14,0,128,
-129,5,35,0,0,129,130,5,52,0,0,130,134,3,2,1,0,131,132,5,3,0,0,132,133,5,
-52,0,0,133,135,3,2,1,0,134,131,1,0,0,0,134,135,1,0,0,0,135,136,1,0,0,0,136,
-137,5,36,0,0,137,19,1,0,0,0,138,139,5,34,0,0,139,140,3,28,14,0,140,141,5,
-35,0,0,141,144,3,4,2,0,142,143,5,3,0,0,143,145,3,4,2,0,144,142,1,0,0,0,144,
-145,1,0,0,0,145,21,1,0,0,0,146,147,5,37,0,0,147,148,3,28,14,0,148,149,5,
-52,0,0,149,150,3,2,1,0,150,151,5,38,0,0,151,23,1,0,0,0,152,153,5,39,0,0,
-153,154,3,14,7,0,154,155,5,40,0,0,155,158,3,28,14,0,156,157,5,41,0,0,157,
-159,3,28,14,0,158,156,1,0,0,0,158,159,1,0,0,0,159,160,1,0,0,0,160,161,5,
-52,0,0,161,162,3,2,1,0,162,163,5,42,0,0,163,25,1,0,0,0,164,166,3,28,14,0,
-165,164,1,0,0,0,166,169,1,0,0,0,167,165,1,0,0,0,167,168,1,0,0,0,168,27,1,
-0,0,0,169,167,1,0,0,0,170,171,3,30,15,0,171,29,1,0,0,0,172,173,6,15,-1,0,
-173,174,3,32,16,0,174,180,1,0,0,0,175,176,10,1,0,0,176,177,5,24,0,0,177,
-179,3,30,15,2,178,175,1,0,0,0,179,182,1,0,0,0,180,178,1,0,0,0,180,181,1,
-0,0,0,181,31,1,0,0,0,182,180,1,0,0,0,183,184,6,16,-1,0,184,185,3,34,17,0,
-185,191,1,0,0,0,186,187,10,1,0,0,187,188,5,23,0,0,188,190,3,34,17,0,189,
-186,1,0,0,0,190,193,1,0,0,0,191,189,1,0,0,0,191,192,1,0,0,0,192,33,1,0,0,
-0,193,191,1,0,0,0,194,195,6,17,-1,0,195,196,3,36,18,0,196,202,1,0,0,0,197,
-198,10,1,0,0,198,199,5,4,0,0,199,201,3,36,18,0,200,197,1,0,0,0,201,204,1,
-0,0,0,202,200,1,0,0,0,202,203,1,0,0,0,203,35,1,0,0,0,204,202,1,0,0,0,205,
-206,6,18,-1,0,206,207,3,38,19,0,207,213,1,0,0,0,208,209,10,1,0,0,209,210,
-5,5,0,0,210,212,3,38,19,0,211,208,1,0,0,0,212,215,1,0,0,0,213,211,1,0,0,
-0,213,214,1,0,0,0,214,37,1,0,0,0,215,213,1,0,0,0,216,217,6,19,-1,0,217,218,
-3,40,20,0,218,224,1,0,0,0,219,220,10,1,0,0,220,221,7,0,0,0,221,223,3,40,
-20,0,222,219,1,0,0,0,223,226,1,0,0,0,224,222,1,0,0,0,224,225,1,0,0,0,225,
-39,1,0,0,0,226,224,1,0,0,0,227,228,6,20,-1,0,228,229,3,42,21,0,229,235,1,
-0,0,0,230,231,10,1,0,0,231,232,7,1,0,0,232,234,3,42,21,0,233,230,1,0,0,0,
-234,237,1,0,0,0,235,233,1,0,0,0,235,236,1,0,0,0,236,41,1,0,0,0,237,235,1,
-0,0,0,238,239,6,21,-1,0,239,240,3,44,22,0,240,246,1,0,0,0,241,242,10,1,0,
-0,242,243,7,2,0,0,243,245,3,44,22,0,244,241,1,0,0,0,245,248,1,0,0,0,246,
-244,1,0,0,0,246,247,1,0,0,0,247,43,1,0,0,0,248,246,1,0,0,0,249,250,6,22,
--1,0,250,251,3,46,23,0,251,257,1,0,0,0,252,253,10,1,0,0,253,254,7,3,0,0,
-254,256,3,46,23,0,255,252,1,0,0,0,256,259,1,0,0,0,257,255,1,0,0,0,257,258,
-1,0,0,0,258,45,1,0,0,0,259,257,1,0,0,0,260,261,6,23,-1,0,261,262,3,48,24,
-0,262,268,1,0,0,0,263,264,10,1,0,0,264,265,7,4,0,0,265,267,3,48,24,0,266,
-263,1,0,0,0,267,270,1,0,0,0,268,266,1,0,0,0,268,269,1,0,0,0,269,47,1,0,0,
-0,270,268,1,0,0,0,271,281,3,50,25,0,272,273,5,15,0,0,273,279,3,48,24,0,274,
-275,5,16,0,0,275,279,3,48,24,0,276,277,5,10,0,0,277,279,3,48,24,0,278,272,
-1,0,0,0,278,274,1,0,0,0,278,276,1,0,0,0,279,281,1,0,0,0,280,271,1,0,0,0,
-280,278,1,0,0,0,281,49,1,0,0,0,282,289,3,62,31,0,283,289,3,64,32,0,284,289,
-3,54,27,0,285,289,3,58,29,0,286,289,3,60,30,0,287,289,3,52,26,0,288,282,
-1,0,0,0,288,283,1,0,0,0,288,284,1,0,0,0,288,285,1,0,0,0,288,286,1,0,0,0,
-288,287,1,0,0,0,289,51,1,0,0,0,290,291,5,26,0,0,291,292,3,28,14,0,292,293,
-5,27,0,0,293,53,1,0,0,0,294,295,3,56,28,0,295,296,5,26,0,0,296,297,3,28,
-14,0,297,298,5,27,0,0,298,55,1,0,0,0,299,300,7,5,0,0,300,57,1,0,0,0,301,
-302,3,62,31,0,302,303,5,26,0,0,303,304,3,42,21,0,304,305,5,27,0,0,305,59,
-1,0,0,0,306,307,3,62,31,0,307,308,5,28,0,0,308,311,3,28,14,0,309,310,5,25,
-0,0,310,312,3,28,14,0,311,309,1,0,0,0,311,312,1,0,0,0,312,313,1,0,0,0,313,
-314,5,29,0,0,314,61,1,0,0,0,315,316,5,45,0,0,316,63,1,0,0,0,317,322,3,66,
-33,0,318,322,5,46,0,0,319,322,5,48,0,0,320,322,5,49,0,0,321,317,1,0,0,0,
-321,318,1,0,0,0,321,319,1,0,0,0,321,320,1,0,0,0,322,65,1,0,0,0,323,325,5,
-16,0,0,324,323,1,0,0,0,324,325,1,0,0,0,325,326,1,0,0,0,326,327,5,47,0,0,
-327,67,1,0,0,0,328,329,5,52,0,0,329,69,1,0,0,0,27,75,79,88,95,105,112,117,
-124,134,144,158,167,180,191,202,213,224,235,246,257,268,278,280,288,311,
-321,324];
+34,2,35,7,35,2,36,7,36,1,0,1,0,1,1,1,1,1,1,3,1,80,8,1,5,1,82,8,1,10,1,12,
+1,85,9,1,1,2,1,2,1,2,1,2,1,2,1,2,3,2,93,8,2,1,3,1,3,1,3,5,3,98,8,3,10,3,
+12,3,101,9,3,1,4,1,4,1,4,5,4,106,8,4,10,4,12,4,109,9,4,1,5,1,5,1,5,1,6,1,
+6,1,6,1,7,1,7,1,7,5,7,120,8,7,10,7,12,7,123,9,7,1,8,1,8,1,8,1,8,1,9,1,9,
+3,9,131,8,9,1,10,1,10,3,10,135,8,10,1,11,1,11,1,11,1,11,1,11,1,11,1,11,1,
+11,3,11,145,8,11,1,11,1,11,1,12,1,12,1,12,1,12,1,12,1,12,3,12,155,8,12,1,
+13,1,13,1,13,1,13,1,13,1,13,1,14,1,14,1,14,1,14,1,14,1,14,3,14,169,8,14,
+1,14,1,14,1,14,1,14,1,15,5,15,176,8,15,10,15,12,15,179,9,15,1,16,1,16,1,
+17,1,17,1,17,1,17,1,17,1,17,5,17,189,8,17,10,17,12,17,192,9,17,1,18,1,18,
+1,18,1,18,1,18,1,18,5,18,200,8,18,10,18,12,18,203,9,18,1,19,1,19,1,19,1,
+19,1,19,1,19,5,19,211,8,19,10,19,12,19,214,9,19,1,20,1,20,1,20,1,20,1,20,
+1,20,5,20,222,8,20,10,20,12,20,225,9,20,1,21,1,21,1,21,1,21,1,21,1,21,5,
+21,233,8,21,10,21,12,21,236,9,21,1,22,1,22,1,22,1,22,1,22,1,22,5,22,244,
+8,22,10,22,12,22,247,9,22,1,23,1,23,1,23,1,23,1,23,1,23,5,23,255,8,23,10,
+23,12,23,258,9,23,1,24,1,24,1,24,1,24,1,24,1,24,5,24,266,8,24,10,24,12,24,
+269,9,24,1,25,1,25,1,25,1,25,1,25,1,25,5,25,277,8,25,10,25,12,25,280,9,25,
+1,26,1,26,1,26,1,26,1,26,1,26,1,26,3,26,289,8,26,3,26,291,8,26,1,27,1,27,
+1,27,1,27,1,27,3,27,298,8,27,1,28,1,28,1,28,1,28,1,29,1,29,1,29,1,29,1,29,
+1,30,1,30,1,31,1,31,1,31,1,31,1,31,1,32,1,32,1,32,1,32,1,32,3,32,321,8,32,
+1,32,1,32,1,33,1,33,1,34,1,34,1,34,1,34,3,34,331,8,34,1,35,3,35,334,8,35,
+1,35,1,35,1,36,1,36,1,36,0,9,34,36,38,40,42,44,46,48,50,37,0,2,4,6,8,10,
+12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,
+60,62,64,66,68,70,72,0,6,1,0,5,6,2,0,7,8,21,22,1,0,19,20,1,0,16,18,1,0,9,
+11,1,0,36,39,339,0,74,1,0,0,0,2,83,1,0,0,0,4,92,1,0,0,0,6,94,1,0,0,0,8,102,
+1,0,0,0,10,110,1,0,0,0,12,113,1,0,0,0,14,116,1,0,0,0,16,124,1,0,0,0,18,130,
+1,0,0,0,20,134,1,0,0,0,22,136,1,0,0,0,24,148,1,0,0,0,26,156,1,0,0,0,28,162,
+1,0,0,0,30,177,1,0,0,0,32,180,1,0,0,0,34,182,1,0,0,0,36,193,1,0,0,0,38,204,
+1,0,0,0,40,215,1,0,0,0,42,226,1,0,0,0,44,237,1,0,0,0,46,248,1,0,0,0,48,259,
+1,0,0,0,50,270,1,0,0,0,52,290,1,0,0,0,54,297,1,0,0,0,56,299,1,0,0,0,58,303,
+1,0,0,0,60,308,1,0,0,0,62,310,1,0,0,0,64,315,1,0,0,0,66,324,1,0,0,0,68,330,
+1,0,0,0,70,333,1,0,0,0,72,337,1,0,0,0,74,75,3,2,1,0,75,1,1,0,0,0,76,79,3,
+4,2,0,77,80,3,72,36,0,78,80,5,0,0,1,79,77,1,0,0,0,79,78,1,0,0,0,80,82,1,
+0,0,0,81,76,1,0,0,0,82,85,1,0,0,0,83,81,1,0,0,0,83,84,1,0,0,0,84,3,1,0,0,
+0,85,83,1,0,0,0,86,93,3,10,5,0,87,93,3,12,6,0,88,93,3,20,10,0,89,93,3,26,
+13,0,90,93,3,28,14,0,91,93,3,14,7,0,92,86,1,0,0,0,92,87,1,0,0,0,92,88,1,
+0,0,0,92,89,1,0,0,0,92,90,1,0,0,0,92,91,1,0,0,0,93,5,1,0,0,0,94,99,3,18,
+9,0,95,96,5,13,0,0,96,98,3,18,9,0,97,95,1,0,0,0,98,101,1,0,0,0,99,97,1,0,
+0,0,99,100,1,0,0,0,100,7,1,0,0,0,101,99,1,0,0,0,102,107,3,32,16,0,103,104,
+5,13,0,0,104,106,3,32,16,0,105,103,1,0,0,0,106,109,1,0,0,0,107,105,1,0,0,
+0,107,108,1,0,0,0,108,9,1,0,0,0,109,107,1,0,0,0,110,111,5,49,0,0,111,112,
+3,6,3,0,112,11,1,0,0,0,113,114,5,1,0,0,114,115,3,8,4,0,115,13,1,0,0,0,116,
+121,3,16,8,0,117,118,5,31,0,0,118,120,3,16,8,0,119,117,1,0,0,0,120,123,1,
+0,0,0,121,119,1,0,0,0,121,122,1,0,0,0,122,15,1,0,0,0,123,121,1,0,0,0,124,
+125,3,18,9,0,125,126,5,12,0,0,126,127,3,32,16,0,127,17,1,0,0,0,128,131,3,
+66,33,0,129,131,3,62,31,0,130,128,1,0,0,0,130,129,1,0,0,0,131,19,1,0,0,0,
+132,135,3,22,11,0,133,135,3,24,12,0,134,132,1,0,0,0,134,133,1,0,0,0,135,
+21,1,0,0,0,136,137,5,40,0,0,137,138,3,32,16,0,138,139,5,41,0,0,139,140,5,
+58,0,0,140,144,3,2,1,0,141,142,5,2,0,0,142,143,5,58,0,0,143,145,3,2,1,0,
+144,141,1,0,0,0,144,145,1,0,0,0,145,146,1,0,0,0,146,147,5,42,0,0,147,23,
+1,0,0,0,148,149,5,40,0,0,149,150,3,32,16,0,150,151,5,41,0,0,151,154,3,4,
+2,0,152,153,5,2,0,0,153,155,3,4,2,0,154,152,1,0,0,0,154,155,1,0,0,0,155,
+25,1,0,0,0,156,157,5,43,0,0,157,158,3,32,16,0,158,159,5,58,0,0,159,160,3,
+2,1,0,160,161,5,44,0,0,161,27,1,0,0,0,162,163,5,45,0,0,163,164,3,16,8,0,
+164,165,5,46,0,0,165,168,3,32,16,0,166,167,5,47,0,0,167,169,3,32,16,0,168,
+166,1,0,0,0,168,169,1,0,0,0,169,170,1,0,0,0,170,171,5,58,0,0,171,172,3,2,
+1,0,172,173,5,48,0,0,173,29,1,0,0,0,174,176,3,32,16,0,175,174,1,0,0,0,176,
+179,1,0,0,0,177,175,1,0,0,0,177,178,1,0,0,0,178,31,1,0,0,0,179,177,1,0,0,
+0,180,181,3,34,17,0,181,33,1,0,0,0,182,183,6,17,-1,0,183,184,3,36,18,0,184,
+190,1,0,0,0,185,186,10,1,0,0,186,187,5,3,0,0,187,189,3,34,17,2,188,185,1,
+0,0,0,189,192,1,0,0,0,190,188,1,0,0,0,190,191,1,0,0,0,191,35,1,0,0,0,192,
+190,1,0,0,0,193,194,6,18,-1,0,194,195,3,38,19,0,195,201,1,0,0,0,196,197,
+10,1,0,0,197,198,5,4,0,0,198,200,3,38,19,0,199,196,1,0,0,0,200,203,1,0,0,
+0,201,199,1,0,0,0,201,202,1,0,0,0,202,37,1,0,0,0,203,201,1,0,0,0,204,205,
+6,19,-1,0,205,206,3,40,20,0,206,212,1,0,0,0,207,208,10,1,0,0,208,209,5,29,
+0,0,209,211,3,40,20,0,210,207,1,0,0,0,211,214,1,0,0,0,212,210,1,0,0,0,212,
+213,1,0,0,0,213,39,1,0,0,0,214,212,1,0,0,0,215,216,6,20,-1,0,216,217,3,42,
+21,0,217,223,1,0,0,0,218,219,10,1,0,0,219,220,5,27,0,0,220,222,3,42,21,0,
+221,218,1,0,0,0,222,225,1,0,0,0,223,221,1,0,0,0,223,224,1,0,0,0,224,41,1,
+0,0,0,225,223,1,0,0,0,226,227,6,21,-1,0,227,228,3,44,22,0,228,234,1,0,0,
+0,229,230,10,1,0,0,230,231,7,0,0,0,231,233,3,44,22,0,232,229,1,0,0,0,233,
+236,1,0,0,0,234,232,1,0,0,0,234,235,1,0,0,0,235,43,1,0,0,0,236,234,1,0,0,
+0,237,238,6,22,-1,0,238,239,3,46,23,0,239,245,1,0,0,0,240,241,10,1,0,0,241,
+242,7,1,0,0,242,244,3,46,23,0,243,240,1,0,0,0,244,247,1,0,0,0,245,243,1,
+0,0,0,245,246,1,0,0,0,246,45,1,0,0,0,247,245,1,0,0,0,248,249,6,23,-1,0,249,
+250,3,48,24,0,250,256,1,0,0,0,251,252,10,1,0,0,252,253,7,2,0,0,253,255,3,
+48,24,0,254,251,1,0,0,0,255,258,1,0,0,0,256,254,1,0,0,0,256,257,1,0,0,0,
+257,47,1,0,0,0,258,256,1,0,0,0,259,260,6,24,-1,0,260,261,3,50,25,0,261,267,
+1,0,0,0,262,263,10,1,0,0,263,264,7,3,0,0,264,266,3,50,25,0,265,262,1,0,0,
+0,266,269,1,0,0,0,267,265,1,0,0,0,267,268,1,0,0,0,268,49,1,0,0,0,269,267,
+1,0,0,0,270,271,6,25,-1,0,271,272,3,52,26,0,272,278,1,0,0,0,273,274,10,1,
+0,0,274,275,7,4,0,0,275,277,3,52,26,0,276,273,1,0,0,0,277,280,1,0,0,0,278,
+276,1,0,0,0,278,279,1,0,0,0,279,51,1,0,0,0,280,278,1,0,0,0,281,291,3,54,
+27,0,282,283,5,19,0,0,283,289,3,52,26,0,284,285,5,20,0,0,285,289,3,52,26,
+0,286,287,5,14,0,0,287,289,3,52,26,0,288,282,1,0,0,0,288,284,1,0,0,0,288,
+286,1,0,0,0,289,291,1,0,0,0,290,281,1,0,0,0,290,288,1,0,0,0,291,53,1,0,0,
+0,292,298,3,18,9,0,293,298,3,68,34,0,294,298,3,58,29,0,295,298,3,64,32,0,
+296,298,3,56,28,0,297,292,1,0,0,0,297,293,1,0,0,0,297,294,1,0,0,0,297,295,
+1,0,0,0,297,296,1,0,0,0,298,55,1,0,0,0,299,300,5,32,0,0,300,301,3,32,16,
+0,301,302,5,33,0,0,302,57,1,0,0,0,303,304,3,60,30,0,304,305,5,32,0,0,305,
+306,3,32,16,0,306,307,5,33,0,0,307,59,1,0,0,0,308,309,7,5,0,0,309,61,1,0,
+0,0,310,311,3,66,33,0,311,312,5,32,0,0,312,313,3,8,4,0,313,314,5,33,0,0,
+314,63,1,0,0,0,315,316,3,66,33,0,316,317,5,34,0,0,317,320,3,32,16,0,318,
+319,5,31,0,0,319,321,3,32,16,0,320,318,1,0,0,0,320,321,1,0,0,0,321,322,1,
+0,0,0,322,323,5,35,0,0,323,65,1,0,0,0,324,325,5,51,0,0,325,67,1,0,0,0,326,
+331,3,70,35,0,327,331,5,52,0,0,328,331,5,54,0,0,329,331,5,55,0,0,330,326,
+1,0,0,0,330,327,1,0,0,0,330,328,1,0,0,0,330,329,1,0,0,0,331,69,1,0,0,0,332,
+334,5,20,0,0,333,332,1,0,0,0,333,334,1,0,0,0,334,335,1,0,0,0,335,336,5,53,
+0,0,336,71,1,0,0,0,337,338,5,58,0,0,338,73,1,0,0,0,27,79,83,92,99,107,121,
+130,134,144,154,168,177,190,201,212,223,234,245,256,267,278,288,290,297,
+320,330,333];
 
 
 const atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -116,29 +118,32 @@ const sharedContextCache = new antlr4.atn.PredictionContextCache();
 export default class WDTPDParser extends antlr4.Parser {
 
     static grammarFileName = "WDTPD.g4";
-    static literalNames = [ null, "'OUTPUT'", "'='", "'ELSE'", "'|'", "'&'", 
-                            "'^'", "'\\u2191'", "'**'", "','", "'!'", null, 
-                            "'*'", "'/'", "'%'", "'+'", "'-'", "'<'", "'>'", 
-                            "'<='", "'>='", "'=='", "'!='", "'&&'", "'||'", 
-                            "':'", "'('", "')'", "'['", "']'", "'abs'", 
-                            "'len'", "'sqrt'", "'int'", "'IF'", "'THEN'", 
-                            "'END IF'", "'WHILE'", "'END WHILE'", "'FOR'", 
-                            "'TO'", "'STEP'", "'NEXT'", "'INPUT'" ];
+    static literalNames = [ null, "'OUTPUT'", "'ELSE'", "'||'", "'&&'", 
+                            "'=='", "'!='", "'>='", "'<='", "'^'", "'\\u2191'", 
+                            "'**'", "'='", "','", "'!'", null, "'*'", "'/'", 
+                            "'%'", "'+'", "'-'", "'<'", "'>'", null, null, 
+                            null, null, "'&'", null, "'|'", null, "':'", 
+                            "'('", "')'", "'['", "']'", "'abs'", "'len'", 
+                            "'sqrt'", "'int'", "'IF'", "'THEN'", "'END IF'", 
+                            "'WHILE'", "'END WHILE'", "'FOR'", "'TO'", "'STEP'", 
+                            "'NEXT'", "'INPUT'" ];
     static symbolicNames = [ null, null, null, null, null, null, null, null, 
-                             null, "COMMA", "NOT", "EXPONENT", "STAR", "SLASH", 
-                             "PERCENT", "PLUS", "DASH", "LT", "GT", "LTE", 
-                             "GTE", "DOUBLE_EQUAL", "DNE", "DOUBLE_AMPERSAND", 
+                             null, null, null, null, "EQUALS", "COMMA", 
+                             "NOT", "EXPONENT", "STAR", "SLASH", "PERCENT", 
+                             "PLUS", "DASH", "LT", "GT", "LTE", "GTE", "EQEQ", 
+                             "DNE", "AMPERSAND", "DOUBLE_AMPERSAND", "PIPE", 
                              "DOUBLE_PIPE", "COLON", "OPEN_PAREN", "CLOSE_PAREN", 
                              "OPEN_BRACKET", "CLOSE_BRACKET", "ABS", "LEN", 
                              "SQRT", "INT_FUNC", "IF", "THEN", "END_IF", 
                              "WHILE", "END_WHILE", "FOR", "TO", "STEP", 
                              "NEXT", "INPUT", "OUTPUT", "ID", "STRING", 
-                             "INTEGER", "BOOLEAN", "NULL", "COMMENT", "WS", 
+                             "INTEGER", "BOOLEAN", "NULL", "COMMENT", "WSSKIP", 
                              "NL" ];
-    static ruleNames = [ "prog", "stmt_list", "stmt", "id_list", "input", 
-                         "output", "assignment_list", "assignment", "if_stmt", 
-                         "multi_line_if_stmt", "single_line_if_stmt", "while_stmt", 
-                         "for_loop_stmt", "params", "expression", "conditional_or_expr", 
+    static ruleNames = [ "prog", "stmt_list", "stmt", "reference_list", 
+                         "argument_list", "input", "output", "assignment_list", 
+                         "assignment", "reference", "if_stmt", "multi_line_if_stmt", 
+                         "single_line_if_stmt", "while_stmt", "for_loop_stmt", 
+                         "params", "expression", "conditional_or_expr", 
                          "conditional_and_expr", "or_expr", "and_expr", 
                          "equality_expr", "relational_expr", "additive_expr", 
                          "multiplicative_expr", "exponent_expr", "unary_expr", 
@@ -156,23 +161,23 @@ export default class WDTPDParser extends antlr4.Parser {
 
     sempred(localctx, ruleIndex, predIndex) {
     	switch(ruleIndex) {
-    	case 15:
-    	    		return this.conditional_or_expr_sempred(localctx, predIndex);
-    	case 16:
-    	    		return this.conditional_and_expr_sempred(localctx, predIndex);
     	case 17:
-    	    		return this.or_expr_sempred(localctx, predIndex);
+    	    		return this.conditional_or_expr_sempred(localctx, predIndex);
     	case 18:
-    	    		return this.and_expr_sempred(localctx, predIndex);
+    	    		return this.conditional_and_expr_sempred(localctx, predIndex);
     	case 19:
-    	    		return this.equality_expr_sempred(localctx, predIndex);
+    	    		return this.or_expr_sempred(localctx, predIndex);
     	case 20:
-    	    		return this.relational_expr_sempred(localctx, predIndex);
+    	    		return this.and_expr_sempred(localctx, predIndex);
     	case 21:
-    	    		return this.additive_expr_sempred(localctx, predIndex);
+    	    		return this.equality_expr_sempred(localctx, predIndex);
     	case 22:
-    	    		return this.multiplicative_expr_sempred(localctx, predIndex);
+    	    		return this.relational_expr_sempred(localctx, predIndex);
     	case 23:
+    	    		return this.additive_expr_sempred(localctx, predIndex);
+    	case 24:
+    	    		return this.multiplicative_expr_sempred(localctx, predIndex);
+    	case 25:
     	    		return this.exponent_expr_sempred(localctx, predIndex);
         default:
             throw "No predicate with index:" + ruleIndex;
@@ -268,7 +273,7 @@ export default class WDTPDParser extends antlr4.Parser {
 	    this.enterRule(localctx, 0, WDTPDParser.RULE_prog);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 70;
+	        this.state = 74;
 	        this.stmt_list();
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -292,27 +297,27 @@ export default class WDTPDParser extends antlr4.Parser {
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 79;
+	        this.state = 83;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        while(_la===1 || ((((_la - 34)) & ~0x1f) === 0 && ((1 << (_la - 34)) & 2601) !== 0)) {
-	            this.state = 72;
+	        while(_la===1 || ((((_la - 40)) & ~0x1f) === 0 && ((1 << (_la - 40)) & 2601) !== 0)) {
+	            this.state = 76;
 	            this.stmt();
-	            this.state = 75;
+	            this.state = 79;
 	            this._errHandler.sync(this);
 	            switch(this._input.LA(1)) {
-	            case 52:
-	                this.state = 73;
+	            case 58:
+	                this.state = 77;
 	                this.endOfStatement();
 	                break;
 	            case -1:
-	                this.state = 74;
+	                this.state = 78;
 	                this.match(WDTPDParser.EOF);
 	                break;
 	            default:
 	                throw new antlr4.error.NoViableAltException(this);
 	            }
-	            this.state = 81;
+	            this.state = 85;
 	            this._errHandler.sync(this);
 	            _la = this._input.LA(1);
 	        }
@@ -336,37 +341,37 @@ export default class WDTPDParser extends antlr4.Parser {
 	    let localctx = new StmtContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 4, WDTPDParser.RULE_stmt);
 	    try {
-	        this.state = 88;
+	        this.state = 92;
 	        this._errHandler.sync(this);
 	        switch(this._input.LA(1)) {
-	        case 43:
+	        case 49:
 	            this.enterOuterAlt(localctx, 1);
-	            this.state = 82;
+	            this.state = 86;
 	            this.input();
 	            break;
 	        case 1:
 	            this.enterOuterAlt(localctx, 2);
-	            this.state = 83;
+	            this.state = 87;
 	            this.output();
 	            break;
-	        case 34:
+	        case 40:
 	            this.enterOuterAlt(localctx, 3);
-	            this.state = 84;
+	            this.state = 88;
 	            this.if_stmt();
 	            break;
-	        case 37:
+	        case 43:
 	            this.enterOuterAlt(localctx, 4);
-	            this.state = 85;
+	            this.state = 89;
 	            this.while_stmt();
 	            break;
-	        case 39:
+	        case 45:
 	            this.enterOuterAlt(localctx, 5);
-	            this.state = 86;
+	            this.state = 90;
 	            this.for_loop_stmt();
 	            break;
-	        case 45:
+	        case 51:
 	            this.enterOuterAlt(localctx, 6);
-	            this.state = 87;
+	            this.state = 91;
 	            this.assignment_list();
 	            break;
 	        default:
@@ -388,23 +393,59 @@ export default class WDTPDParser extends antlr4.Parser {
 
 
 
-	id_list() {
-	    let localctx = new Id_listContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 6, WDTPDParser.RULE_id_list);
+	reference_list() {
+	    let localctx = new Reference_listContext(this, this._ctx, this.state);
+	    this.enterRule(localctx, 6, WDTPDParser.RULE_reference_list);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 90;
-	        this.id();
-	        this.state = 95;
+	        this.state = 94;
+	        this.reference();
+	        this.state = 99;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        while(_la===9) {
-	            this.state = 91;
+	        while(_la===13) {
+	            this.state = 95;
 	            this.match(WDTPDParser.COMMA);
-	            this.state = 92;
-	            this.id();
-	            this.state = 97;
+	            this.state = 96;
+	            this.reference();
+	            this.state = 101;
+	            this._errHandler.sync(this);
+	            _la = this._input.LA(1);
+	        }
+	    } catch (re) {
+	    	if(re instanceof antlr4.error.RecognitionException) {
+		        localctx.exception = re;
+		        this._errHandler.reportError(this, re);
+		        this._errHandler.recover(this, re);
+		    } else {
+		    	throw re;
+		    }
+	    } finally {
+	        this.exitRule();
+	    }
+	    return localctx;
+	}
+
+
+
+	argument_list() {
+	    let localctx = new Argument_listContext(this, this._ctx, this.state);
+	    this.enterRule(localctx, 8, WDTPDParser.RULE_argument_list);
+	    var _la = 0;
+	    try {
+	        this.enterOuterAlt(localctx, 1);
+	        this.state = 102;
+	        this.expression();
+	        this.state = 107;
+	        this._errHandler.sync(this);
+	        _la = this._input.LA(1);
+	        while(_la===13) {
+	            this.state = 103;
+	            this.match(WDTPDParser.COMMA);
+	            this.state = 104;
+	            this.expression();
+	            this.state = 109;
 	            this._errHandler.sync(this);
 	            _la = this._input.LA(1);
 	        }
@@ -426,13 +467,13 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	input() {
 	    let localctx = new InputContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 8, WDTPDParser.RULE_input);
+	    this.enterRule(localctx, 10, WDTPDParser.RULE_input);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 98;
+	        this.state = 110;
 	        this.match(WDTPDParser.INPUT);
-	        this.state = 99;
-	        this.id_list();
+	        this.state = 111;
+	        this.reference_list();
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -451,22 +492,13 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	output() {
 	    let localctx = new OutputContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 10, WDTPDParser.RULE_output);
-	    var _la = 0;
+	    this.enterRule(localctx, 12, WDTPDParser.RULE_output);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 101;
+	        this.state = 113;
 	        this.match(WDTPDParser.T__0);
-	        this.state = 103; 
-	        this._errHandler.sync(this);
-	        _la = this._input.LA(1);
-	        do {
-	            this.state = 102;
-	            this.expression();
-	            this.state = 105; 
-	            this._errHandler.sync(this);
-	            _la = this._input.LA(1);
-	        } while((((_la) & ~0x1f) === 0 && ((1 << _la) & 3288433664) !== 0) || ((((_la - 32)) & ~0x1f) === 0 && ((1 << (_la - 32)) & 253955) !== 0));
+	        this.state = 114;
+	        this.argument_list();
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -485,21 +517,21 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	assignment_list() {
 	    let localctx = new Assignment_listContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 12, WDTPDParser.RULE_assignment_list);
+	    this.enterRule(localctx, 14, WDTPDParser.RULE_assignment_list);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 107;
+	        this.state = 116;
 	        this.assignment();
-	        this.state = 112;
+	        this.state = 121;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        while(_la===25) {
-	            this.state = 108;
+	        while(_la===31) {
+	            this.state = 117;
 	            this.match(WDTPDParser.COLON);
-	            this.state = 109;
+	            this.state = 118;
 	            this.assignment();
-	            this.state = 114;
+	            this.state = 123;
 	            this._errHandler.sync(this);
 	            _la = this._input.LA(1);
 	        }
@@ -521,28 +553,52 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	assignment() {
 	    let localctx = new AssignmentContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 14, WDTPDParser.RULE_assignment);
+	    this.enterRule(localctx, 16, WDTPDParser.RULE_assignment);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 117;
+	        this.state = 124;
+	        this.reference();
+	        this.state = 125;
+	        this.match(WDTPDParser.EQUALS);
+	        this.state = 126;
+	        this.expression();
+	    } catch (re) {
+	    	if(re instanceof antlr4.error.RecognitionException) {
+		        localctx.exception = re;
+		        this._errHandler.reportError(this, re);
+		        this._errHandler.recover(this, re);
+		    } else {
+		    	throw re;
+		    }
+	    } finally {
+	        this.exitRule();
+	    }
+	    return localctx;
+	}
+
+
+
+	reference() {
+	    let localctx = new ReferenceContext(this, this._ctx, this.state);
+	    this.enterRule(localctx, 18, WDTPDParser.RULE_reference);
+	    try {
+	        this.state = 130;
 	        this._errHandler.sync(this);
 	        var la_ = this._interp.adaptivePredict(this._input,6,this._ctx);
 	        switch(la_) {
 	        case 1:
-	            this.state = 115;
+	            this.enterOuterAlt(localctx, 1);
+	            this.state = 128;
 	            this.id();
 	            break;
 
 	        case 2:
-	            this.state = 116;
+	            this.enterOuterAlt(localctx, 2);
+	            this.state = 129;
 	            this.array_reference();
 	            break;
 
 	        }
-	        this.state = 119;
-	        this.match(WDTPDParser.T__1);
-	        this.state = 120;
-	        this.expression();
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -561,21 +617,21 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	if_stmt() {
 	    let localctx = new If_stmtContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 16, WDTPDParser.RULE_if_stmt);
+	    this.enterRule(localctx, 20, WDTPDParser.RULE_if_stmt);
 	    try {
-	        this.state = 124;
+	        this.state = 134;
 	        this._errHandler.sync(this);
 	        var la_ = this._interp.adaptivePredict(this._input,7,this._ctx);
 	        switch(la_) {
 	        case 1:
 	            this.enterOuterAlt(localctx, 1);
-	            this.state = 122;
+	            this.state = 132;
 	            this.multi_line_if_stmt();
 	            break;
 
 	        case 2:
 	            this.enterOuterAlt(localctx, 2);
-	            this.state = 123;
+	            this.state = 133;
 	            this.single_line_if_stmt();
 	            break;
 
@@ -598,33 +654,33 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	multi_line_if_stmt() {
 	    let localctx = new Multi_line_if_stmtContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 18, WDTPDParser.RULE_multi_line_if_stmt);
+	    this.enterRule(localctx, 22, WDTPDParser.RULE_multi_line_if_stmt);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 126;
+	        this.state = 136;
 	        this.match(WDTPDParser.IF);
-	        this.state = 127;
+	        this.state = 137;
 	        this.expression();
-	        this.state = 128;
+	        this.state = 138;
 	        this.match(WDTPDParser.THEN);
-	        this.state = 129;
+	        this.state = 139;
 	        this.match(WDTPDParser.NL);
-	        this.state = 130;
+	        this.state = 140;
 	        this.stmt_list();
-	        this.state = 134;
+	        this.state = 144;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        if(_la===3) {
-	            this.state = 131;
-	            this.match(WDTPDParser.T__2);
-	            this.state = 132;
+	        if(_la===2) {
+	            this.state = 141;
+	            this.match(WDTPDParser.T__1);
+	            this.state = 142;
 	            this.match(WDTPDParser.NL);
-	            this.state = 133;
+	            this.state = 143;
 	            this.stmt_list();
 	        }
 
-	        this.state = 136;
+	        this.state = 146;
 	        this.match(WDTPDParser.END_IF);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -644,24 +700,24 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	single_line_if_stmt() {
 	    let localctx = new Single_line_if_stmtContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 20, WDTPDParser.RULE_single_line_if_stmt);
+	    this.enterRule(localctx, 24, WDTPDParser.RULE_single_line_if_stmt);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 138;
+	        this.state = 148;
 	        this.match(WDTPDParser.IF);
-	        this.state = 139;
+	        this.state = 149;
 	        this.expression();
-	        this.state = 140;
+	        this.state = 150;
 	        this.match(WDTPDParser.THEN);
-	        this.state = 141;
+	        this.state = 151;
 	        this.stmt();
-	        this.state = 144;
+	        this.state = 154;
 	        this._errHandler.sync(this);
 	        var la_ = this._interp.adaptivePredict(this._input,9,this._ctx);
 	        if(la_===1) {
-	            this.state = 142;
-	            this.match(WDTPDParser.T__2);
-	            this.state = 143;
+	            this.state = 152;
+	            this.match(WDTPDParser.T__1);
+	            this.state = 153;
 	            this.stmt();
 
 	        }
@@ -683,18 +739,18 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	while_stmt() {
 	    let localctx = new While_stmtContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 22, WDTPDParser.RULE_while_stmt);
+	    this.enterRule(localctx, 26, WDTPDParser.RULE_while_stmt);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 146;
+	        this.state = 156;
 	        this.match(WDTPDParser.WHILE);
-	        this.state = 147;
+	        this.state = 157;
 	        this.expression();
-	        this.state = 148;
+	        this.state = 158;
 	        this.match(WDTPDParser.NL);
-	        this.state = 149;
+	        this.state = 159;
 	        this.stmt_list();
-	        this.state = 150;
+	        this.state = 160;
 	        this.match(WDTPDParser.END_WHILE);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -714,33 +770,33 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	for_loop_stmt() {
 	    let localctx = new For_loop_stmtContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 24, WDTPDParser.RULE_for_loop_stmt);
+	    this.enterRule(localctx, 28, WDTPDParser.RULE_for_loop_stmt);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 152;
+	        this.state = 162;
 	        this.match(WDTPDParser.FOR);
-	        this.state = 153;
+	        this.state = 163;
 	        this.assignment();
-	        this.state = 154;
+	        this.state = 164;
 	        this.match(WDTPDParser.TO);
-	        this.state = 155;
+	        this.state = 165;
 	        this.expression();
-	        this.state = 158;
+	        this.state = 168;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        if(_la===41) {
-	            this.state = 156;
+	        if(_la===47) {
+	            this.state = 166;
 	            this.match(WDTPDParser.STEP);
-	            this.state = 157;
+	            this.state = 167;
 	            this.expression();
 	        }
 
-	        this.state = 160;
+	        this.state = 170;
 	        this.match(WDTPDParser.NL);
-	        this.state = 161;
+	        this.state = 171;
 	        this.stmt_list();
-	        this.state = 162;
+	        this.state = 172;
 	        this.match(WDTPDParser.NEXT);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -760,17 +816,17 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	params() {
 	    let localctx = new ParamsContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 26, WDTPDParser.RULE_params);
+	    this.enterRule(localctx, 30, WDTPDParser.RULE_params);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 167;
+	        this.state = 177;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        while((((_la) & ~0x1f) === 0 && ((1 << _la) & 3288433664) !== 0) || ((((_la - 32)) & ~0x1f) === 0 && ((1 << (_la - 32)) & 253955) !== 0)) {
-	            this.state = 164;
+	        while((((_la) & ~0x1f) === 0 && ((1 << _la) & 1589248) !== 0) || ((((_la - 32)) & ~0x1f) === 0 && ((1 << (_la - 32)) & 16253169) !== 0)) {
+	            this.state = 174;
 	            this.expression();
-	            this.state = 169;
+	            this.state = 179;
 	            this._errHandler.sync(this);
 	            _la = this._input.LA(1);
 	        }
@@ -792,10 +848,10 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	expression() {
 	    let localctx = new ExpressionContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 28, WDTPDParser.RULE_expression);
+	    this.enterRule(localctx, 32, WDTPDParser.RULE_expression);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 170;
+	        this.state = 180;
 	        this.conditional_or_expr(0);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -820,14 +876,14 @@ export default class WDTPDParser extends antlr4.Parser {
 	    const _parentState = this.state;
 	    let localctx = new Conditional_or_exprContext(this, this._ctx, _parentState);
 	    let _prevctx = localctx;
-	    const _startState = 30;
-	    this.enterRecursionRule(localctx, 30, WDTPDParser.RULE_conditional_or_expr, _p);
+	    const _startState = 34;
+	    this.enterRecursionRule(localctx, 34, WDTPDParser.RULE_conditional_or_expr, _p);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 173;
+	        this.state = 183;
 	        this.conditional_and_expr(0);
 	        this._ctx.stop = this._input.LT(-1);
-	        this.state = 180;
+	        this.state = 190;
 	        this._errHandler.sync(this);
 	        var _alt = this._interp.adaptivePredict(this._input,12,this._ctx)
 	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
@@ -838,16 +894,16 @@ export default class WDTPDParser extends antlr4.Parser {
 	                _prevctx = localctx;
 	                localctx = new Conditional_or_exprContext(this, _parentctx, _parentState);
 	                this.pushNewRecursionContext(localctx, _startState, WDTPDParser.RULE_conditional_or_expr);
-	                this.state = 175;
+	                this.state = 185;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
-	                this.state = 176;
-	                this.match(WDTPDParser.DOUBLE_PIPE);
-	                this.state = 177;
+	                this.state = 186;
+	                this.match(WDTPDParser.T__2);
+	                this.state = 187;
 	                this.conditional_or_expr(2); 
 	            }
-	            this.state = 182;
+	            this.state = 192;
 	            this._errHandler.sync(this);
 	            _alt = this._interp.adaptivePredict(this._input,12,this._ctx);
 	        }
@@ -875,14 +931,14 @@ export default class WDTPDParser extends antlr4.Parser {
 	    const _parentState = this.state;
 	    let localctx = new Conditional_and_exprContext(this, this._ctx, _parentState);
 	    let _prevctx = localctx;
-	    const _startState = 32;
-	    this.enterRecursionRule(localctx, 32, WDTPDParser.RULE_conditional_and_expr, _p);
+	    const _startState = 36;
+	    this.enterRecursionRule(localctx, 36, WDTPDParser.RULE_conditional_and_expr, _p);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 184;
+	        this.state = 194;
 	        this.or_expr(0);
 	        this._ctx.stop = this._input.LT(-1);
-	        this.state = 191;
+	        this.state = 201;
 	        this._errHandler.sync(this);
 	        var _alt = this._interp.adaptivePredict(this._input,13,this._ctx)
 	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
@@ -893,16 +949,16 @@ export default class WDTPDParser extends antlr4.Parser {
 	                _prevctx = localctx;
 	                localctx = new Conditional_and_exprContext(this, _parentctx, _parentState);
 	                this.pushNewRecursionContext(localctx, _startState, WDTPDParser.RULE_conditional_and_expr);
-	                this.state = 186;
+	                this.state = 196;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
-	                this.state = 187;
-	                this.match(WDTPDParser.DOUBLE_AMPERSAND);
-	                this.state = 188;
+	                this.state = 197;
+	                this.match(WDTPDParser.T__3);
+	                this.state = 198;
 	                this.or_expr(0); 
 	            }
-	            this.state = 193;
+	            this.state = 203;
 	            this._errHandler.sync(this);
 	            _alt = this._interp.adaptivePredict(this._input,13,this._ctx);
 	        }
@@ -930,14 +986,14 @@ export default class WDTPDParser extends antlr4.Parser {
 	    const _parentState = this.state;
 	    let localctx = new Or_exprContext(this, this._ctx, _parentState);
 	    let _prevctx = localctx;
-	    const _startState = 34;
-	    this.enterRecursionRule(localctx, 34, WDTPDParser.RULE_or_expr, _p);
+	    const _startState = 38;
+	    this.enterRecursionRule(localctx, 38, WDTPDParser.RULE_or_expr, _p);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 195;
+	        this.state = 205;
 	        this.and_expr(0);
 	        this._ctx.stop = this._input.LT(-1);
-	        this.state = 202;
+	        this.state = 212;
 	        this._errHandler.sync(this);
 	        var _alt = this._interp.adaptivePredict(this._input,14,this._ctx)
 	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
@@ -948,16 +1004,16 @@ export default class WDTPDParser extends antlr4.Parser {
 	                _prevctx = localctx;
 	                localctx = new Or_exprContext(this, _parentctx, _parentState);
 	                this.pushNewRecursionContext(localctx, _startState, WDTPDParser.RULE_or_expr);
-	                this.state = 197;
+	                this.state = 207;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
-	                this.state = 198;
-	                this.match(WDTPDParser.T__3);
-	                this.state = 199;
+	                this.state = 208;
+	                this.match(WDTPDParser.PIPE);
+	                this.state = 209;
 	                this.and_expr(0); 
 	            }
-	            this.state = 204;
+	            this.state = 214;
 	            this._errHandler.sync(this);
 	            _alt = this._interp.adaptivePredict(this._input,14,this._ctx);
 	        }
@@ -985,14 +1041,14 @@ export default class WDTPDParser extends antlr4.Parser {
 	    const _parentState = this.state;
 	    let localctx = new And_exprContext(this, this._ctx, _parentState);
 	    let _prevctx = localctx;
-	    const _startState = 36;
-	    this.enterRecursionRule(localctx, 36, WDTPDParser.RULE_and_expr, _p);
+	    const _startState = 40;
+	    this.enterRecursionRule(localctx, 40, WDTPDParser.RULE_and_expr, _p);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 206;
+	        this.state = 216;
 	        this.equality_expr(0);
 	        this._ctx.stop = this._input.LT(-1);
-	        this.state = 213;
+	        this.state = 223;
 	        this._errHandler.sync(this);
 	        var _alt = this._interp.adaptivePredict(this._input,15,this._ctx)
 	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
@@ -1003,16 +1059,16 @@ export default class WDTPDParser extends antlr4.Parser {
 	                _prevctx = localctx;
 	                localctx = new And_exprContext(this, _parentctx, _parentState);
 	                this.pushNewRecursionContext(localctx, _startState, WDTPDParser.RULE_and_expr);
-	                this.state = 208;
+	                this.state = 218;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
-	                this.state = 209;
-	                this.match(WDTPDParser.T__4);
-	                this.state = 210;
+	                this.state = 219;
+	                this.match(WDTPDParser.AMPERSAND);
+	                this.state = 220;
 	                this.equality_expr(0); 
 	            }
-	            this.state = 215;
+	            this.state = 225;
 	            this._errHandler.sync(this);
 	            _alt = this._interp.adaptivePredict(this._input,15,this._ctx);
 	        }
@@ -1040,15 +1096,15 @@ export default class WDTPDParser extends antlr4.Parser {
 	    const _parentState = this.state;
 	    let localctx = new Equality_exprContext(this, this._ctx, _parentState);
 	    let _prevctx = localctx;
-	    const _startState = 38;
-	    this.enterRecursionRule(localctx, 38, WDTPDParser.RULE_equality_expr, _p);
+	    const _startState = 42;
+	    this.enterRecursionRule(localctx, 42, WDTPDParser.RULE_equality_expr, _p);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 217;
+	        this.state = 227;
 	        this.relational_expr(0);
 	        this._ctx.stop = this._input.LT(-1);
-	        this.state = 224;
+	        this.state = 234;
 	        this._errHandler.sync(this);
 	        var _alt = this._interp.adaptivePredict(this._input,16,this._ctx)
 	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
@@ -1059,23 +1115,23 @@ export default class WDTPDParser extends antlr4.Parser {
 	                _prevctx = localctx;
 	                localctx = new Equality_exprContext(this, _parentctx, _parentState);
 	                this.pushNewRecursionContext(localctx, _startState, WDTPDParser.RULE_equality_expr);
-	                this.state = 219;
+	                this.state = 229;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
-	                this.state = 220;
+	                this.state = 230;
 	                _la = this._input.LA(1);
-	                if(!(_la===21 || _la===22)) {
+	                if(!(_la===5 || _la===6)) {
 	                this._errHandler.recoverInline(this);
 	                }
 	                else {
 	                	this._errHandler.reportMatch(this);
 	                    this.consume();
 	                }
-	                this.state = 221;
+	                this.state = 231;
 	                this.relational_expr(0); 
 	            }
-	            this.state = 226;
+	            this.state = 236;
 	            this._errHandler.sync(this);
 	            _alt = this._interp.adaptivePredict(this._input,16,this._ctx);
 	        }
@@ -1103,15 +1159,15 @@ export default class WDTPDParser extends antlr4.Parser {
 	    const _parentState = this.state;
 	    let localctx = new Relational_exprContext(this, this._ctx, _parentState);
 	    let _prevctx = localctx;
-	    const _startState = 40;
-	    this.enterRecursionRule(localctx, 40, WDTPDParser.RULE_relational_expr, _p);
+	    const _startState = 44;
+	    this.enterRecursionRule(localctx, 44, WDTPDParser.RULE_relational_expr, _p);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 228;
+	        this.state = 238;
 	        this.additive_expr(0);
 	        this._ctx.stop = this._input.LT(-1);
-	        this.state = 235;
+	        this.state = 245;
 	        this._errHandler.sync(this);
 	        var _alt = this._interp.adaptivePredict(this._input,17,this._ctx)
 	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
@@ -1122,23 +1178,23 @@ export default class WDTPDParser extends antlr4.Parser {
 	                _prevctx = localctx;
 	                localctx = new Relational_exprContext(this, _parentctx, _parentState);
 	                this.pushNewRecursionContext(localctx, _startState, WDTPDParser.RULE_relational_expr);
-	                this.state = 230;
+	                this.state = 240;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
-	                this.state = 231;
+	                this.state = 241;
 	                _la = this._input.LA(1);
-	                if(!((((_la) & ~0x1f) === 0 && ((1 << _la) & 1966080) !== 0))) {
+	                if(!((((_la) & ~0x1f) === 0 && ((1 << _la) & 6291840) !== 0))) {
 	                this._errHandler.recoverInline(this);
 	                }
 	                else {
 	                	this._errHandler.reportMatch(this);
 	                    this.consume();
 	                }
-	                this.state = 232;
+	                this.state = 242;
 	                this.additive_expr(0); 
 	            }
-	            this.state = 237;
+	            this.state = 247;
 	            this._errHandler.sync(this);
 	            _alt = this._interp.adaptivePredict(this._input,17,this._ctx);
 	        }
@@ -1166,15 +1222,15 @@ export default class WDTPDParser extends antlr4.Parser {
 	    const _parentState = this.state;
 	    let localctx = new Additive_exprContext(this, this._ctx, _parentState);
 	    let _prevctx = localctx;
-	    const _startState = 42;
-	    this.enterRecursionRule(localctx, 42, WDTPDParser.RULE_additive_expr, _p);
+	    const _startState = 46;
+	    this.enterRecursionRule(localctx, 46, WDTPDParser.RULE_additive_expr, _p);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 239;
+	        this.state = 249;
 	        this.multiplicative_expr(0);
 	        this._ctx.stop = this._input.LT(-1);
-	        this.state = 246;
+	        this.state = 256;
 	        this._errHandler.sync(this);
 	        var _alt = this._interp.adaptivePredict(this._input,18,this._ctx)
 	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
@@ -1185,23 +1241,23 @@ export default class WDTPDParser extends antlr4.Parser {
 	                _prevctx = localctx;
 	                localctx = new Additive_exprContext(this, _parentctx, _parentState);
 	                this.pushNewRecursionContext(localctx, _startState, WDTPDParser.RULE_additive_expr);
-	                this.state = 241;
+	                this.state = 251;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
-	                this.state = 242;
+	                this.state = 252;
 	                _la = this._input.LA(1);
-	                if(!(_la===15 || _la===16)) {
+	                if(!(_la===19 || _la===20)) {
 	                this._errHandler.recoverInline(this);
 	                }
 	                else {
 	                	this._errHandler.reportMatch(this);
 	                    this.consume();
 	                }
-	                this.state = 243;
+	                this.state = 253;
 	                this.multiplicative_expr(0); 
 	            }
-	            this.state = 248;
+	            this.state = 258;
 	            this._errHandler.sync(this);
 	            _alt = this._interp.adaptivePredict(this._input,18,this._ctx);
 	        }
@@ -1229,15 +1285,15 @@ export default class WDTPDParser extends antlr4.Parser {
 	    const _parentState = this.state;
 	    let localctx = new Multiplicative_exprContext(this, this._ctx, _parentState);
 	    let _prevctx = localctx;
-	    const _startState = 44;
-	    this.enterRecursionRule(localctx, 44, WDTPDParser.RULE_multiplicative_expr, _p);
+	    const _startState = 48;
+	    this.enterRecursionRule(localctx, 48, WDTPDParser.RULE_multiplicative_expr, _p);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 250;
+	        this.state = 260;
 	        this.exponent_expr(0);
 	        this._ctx.stop = this._input.LT(-1);
-	        this.state = 257;
+	        this.state = 267;
 	        this._errHandler.sync(this);
 	        var _alt = this._interp.adaptivePredict(this._input,19,this._ctx)
 	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
@@ -1248,23 +1304,23 @@ export default class WDTPDParser extends antlr4.Parser {
 	                _prevctx = localctx;
 	                localctx = new Multiplicative_exprContext(this, _parentctx, _parentState);
 	                this.pushNewRecursionContext(localctx, _startState, WDTPDParser.RULE_multiplicative_expr);
-	                this.state = 252;
+	                this.state = 262;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
-	                this.state = 253;
+	                this.state = 263;
 	                _la = this._input.LA(1);
-	                if(!((((_la) & ~0x1f) === 0 && ((1 << _la) & 28672) !== 0))) {
+	                if(!((((_la) & ~0x1f) === 0 && ((1 << _la) & 458752) !== 0))) {
 	                this._errHandler.recoverInline(this);
 	                }
 	                else {
 	                	this._errHandler.reportMatch(this);
 	                    this.consume();
 	                }
-	                this.state = 254;
+	                this.state = 264;
 	                this.exponent_expr(0); 
 	            }
-	            this.state = 259;
+	            this.state = 269;
 	            this._errHandler.sync(this);
 	            _alt = this._interp.adaptivePredict(this._input,19,this._ctx);
 	        }
@@ -1292,15 +1348,15 @@ export default class WDTPDParser extends antlr4.Parser {
 	    const _parentState = this.state;
 	    let localctx = new Exponent_exprContext(this, this._ctx, _parentState);
 	    let _prevctx = localctx;
-	    const _startState = 46;
-	    this.enterRecursionRule(localctx, 46, WDTPDParser.RULE_exponent_expr, _p);
+	    const _startState = 50;
+	    this.enterRecursionRule(localctx, 50, WDTPDParser.RULE_exponent_expr, _p);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 261;
+	        this.state = 271;
 	        this.unary_expr();
 	        this._ctx.stop = this._input.LT(-1);
-	        this.state = 268;
+	        this.state = 278;
 	        this._errHandler.sync(this);
 	        var _alt = this._interp.adaptivePredict(this._input,20,this._ctx)
 	        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
@@ -1311,23 +1367,23 @@ export default class WDTPDParser extends antlr4.Parser {
 	                _prevctx = localctx;
 	                localctx = new Exponent_exprContext(this, _parentctx, _parentState);
 	                this.pushNewRecursionContext(localctx, _startState, WDTPDParser.RULE_exponent_expr);
-	                this.state = 263;
+	                this.state = 273;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
-	                this.state = 264;
+	                this.state = 274;
 	                _la = this._input.LA(1);
-	                if(!((((_la) & ~0x1f) === 0 && ((1 << _la) & 448) !== 0))) {
+	                if(!((((_la) & ~0x1f) === 0 && ((1 << _la) & 3584) !== 0))) {
 	                this._errHandler.recoverInline(this);
 	                }
 	                else {
 	                	this._errHandler.reportMatch(this);
 	                    this.consume();
 	                }
-	                this.state = 265;
+	                this.state = 275;
 	                this.unary_expr(); 
 	            }
-	            this.state = 270;
+	            this.state = 280;
 	            this._errHandler.sync(this);
 	            _alt = this._interp.adaptivePredict(this._input,20,this._ctx);
 	        }
@@ -1350,39 +1406,39 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	unary_expr() {
 	    let localctx = new Unary_exprContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 48, WDTPDParser.RULE_unary_expr);
+	    this.enterRule(localctx, 52, WDTPDParser.RULE_unary_expr);
 	    try {
-	        this.state = 280;
+	        this.state = 290;
 	        this._errHandler.sync(this);
 	        var la_ = this._interp.adaptivePredict(this._input,22,this._ctx);
 	        switch(la_) {
 	        case 1:
 	            this.enterOuterAlt(localctx, 1);
-	            this.state = 271;
+	            this.state = 281;
 	            this.primary_expr();
 	            break;
 
 	        case 2:
 	            this.enterOuterAlt(localctx, 2);
-	            this.state = 278;
+	            this.state = 288;
 	            this._errHandler.sync(this);
 	            switch(this._input.LA(1)) {
-	            case 15:
-	                this.state = 272;
+	            case 19:
+	                this.state = 282;
 	                this.match(WDTPDParser.PLUS);
-	                this.state = 273;
+	                this.state = 283;
 	                this.unary_expr();
 	                break;
-	            case 16:
-	                this.state = 274;
+	            case 20:
+	                this.state = 284;
 	                this.match(WDTPDParser.DASH);
-	                this.state = 275;
+	                this.state = 285;
 	                this.unary_expr();
 	                break;
-	            case 10:
-	                this.state = 276;
+	            case 14:
+	                this.state = 286;
 	                this.match(WDTPDParser.NOT);
-	                this.state = 277;
+	                this.state = 287;
 	                this.unary_expr();
 	                break;
 	            default:
@@ -1409,45 +1465,39 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	primary_expr() {
 	    let localctx = new Primary_exprContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 50, WDTPDParser.RULE_primary_expr);
+	    this.enterRule(localctx, 54, WDTPDParser.RULE_primary_expr);
 	    try {
-	        this.state = 288;
+	        this.state = 297;
 	        this._errHandler.sync(this);
 	        var la_ = this._interp.adaptivePredict(this._input,23,this._ctx);
 	        switch(la_) {
 	        case 1:
 	            this.enterOuterAlt(localctx, 1);
-	            this.state = 282;
-	            this.id();
+	            this.state = 292;
+	            this.reference();
 	            break;
 
 	        case 2:
 	            this.enterOuterAlt(localctx, 2);
-	            this.state = 283;
+	            this.state = 293;
 	            this.literal();
 	            break;
 
 	        case 3:
 	            this.enterOuterAlt(localctx, 3);
-	            this.state = 284;
+	            this.state = 294;
 	            this.function_call();
 	            break;
 
 	        case 4:
 	            this.enterOuterAlt(localctx, 4);
-	            this.state = 285;
-	            this.array_reference();
+	            this.state = 295;
+	            this.str_slice();
 	            break;
 
 	        case 5:
 	            this.enterOuterAlt(localctx, 5);
-	            this.state = 286;
-	            this.str_slice();
-	            break;
-
-	        case 6:
-	            this.enterOuterAlt(localctx, 6);
-	            this.state = 287;
+	            this.state = 296;
 	            this.paren_expr();
 	            break;
 
@@ -1470,14 +1520,14 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	paren_expr() {
 	    let localctx = new Paren_exprContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 52, WDTPDParser.RULE_paren_expr);
+	    this.enterRule(localctx, 56, WDTPDParser.RULE_paren_expr);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 290;
+	        this.state = 299;
 	        this.match(WDTPDParser.OPEN_PAREN);
-	        this.state = 291;
+	        this.state = 300;
 	        this.expression();
-	        this.state = 292;
+	        this.state = 301;
 	        this.match(WDTPDParser.CLOSE_PAREN);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -1497,16 +1547,16 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	function_call() {
 	    let localctx = new Function_callContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 54, WDTPDParser.RULE_function_call);
+	    this.enterRule(localctx, 58, WDTPDParser.RULE_function_call);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 294;
+	        this.state = 303;
 	        this.function_name();
-	        this.state = 295;
+	        this.state = 304;
 	        this.match(WDTPDParser.OPEN_PAREN);
-	        this.state = 296;
+	        this.state = 305;
 	        this.expression();
-	        this.state = 297;
+	        this.state = 306;
 	        this.match(WDTPDParser.CLOSE_PAREN);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -1526,13 +1576,13 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	function_name() {
 	    let localctx = new Function_nameContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 56, WDTPDParser.RULE_function_name);
+	    this.enterRule(localctx, 60, WDTPDParser.RULE_function_name);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 299;
+	        this.state = 308;
 	        _la = this._input.LA(1);
-	        if(!(((((_la - 30)) & ~0x1f) === 0 && ((1 << (_la - 30)) & 15) !== 0))) {
+	        if(!(((((_la - 36)) & ~0x1f) === 0 && ((1 << (_la - 36)) & 15) !== 0))) {
 	        this._errHandler.recoverInline(this);
 	        }
 	        else {
@@ -1557,16 +1607,16 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	array_reference() {
 	    let localctx = new Array_referenceContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 58, WDTPDParser.RULE_array_reference);
+	    this.enterRule(localctx, 62, WDTPDParser.RULE_array_reference);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 301;
+	        this.state = 310;
 	        this.id();
-	        this.state = 302;
+	        this.state = 311;
 	        this.match(WDTPDParser.OPEN_PAREN);
-	        this.state = 303;
-	        this.additive_expr(0);
-	        this.state = 304;
+	        this.state = 312;
+	        this.argument_list();
+	        this.state = 313;
 	        this.match(WDTPDParser.CLOSE_PAREN);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -1586,27 +1636,27 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	str_slice() {
 	    let localctx = new Str_sliceContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 60, WDTPDParser.RULE_str_slice);
+	    this.enterRule(localctx, 64, WDTPDParser.RULE_str_slice);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 306;
+	        this.state = 315;
 	        this.id();
-	        this.state = 307;
+	        this.state = 316;
 	        this.match(WDTPDParser.OPEN_BRACKET);
-	        this.state = 308;
+	        this.state = 317;
 	        this.expression();
-	        this.state = 311;
+	        this.state = 320;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        if(_la===25) {
-	            this.state = 309;
+	        if(_la===31) {
+	            this.state = 318;
 	            this.match(WDTPDParser.COLON);
-	            this.state = 310;
+	            this.state = 319;
 	            this.expression();
 	        }
 
-	        this.state = 313;
+	        this.state = 322;
 	        this.match(WDTPDParser.CLOSE_BRACKET);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -1626,10 +1676,10 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	id() {
 	    let localctx = new IdContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 62, WDTPDParser.RULE_id);
+	    this.enterRule(localctx, 66, WDTPDParser.RULE_id);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 315;
+	        this.state = 324;
 	        this.match(WDTPDParser.ID);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -1649,30 +1699,30 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	literal() {
 	    let localctx = new LiteralContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 64, WDTPDParser.RULE_literal);
+	    this.enterRule(localctx, 68, WDTPDParser.RULE_literal);
 	    try {
-	        this.state = 321;
+	        this.state = 330;
 	        this._errHandler.sync(this);
 	        switch(this._input.LA(1)) {
-	        case 16:
-	        case 47:
+	        case 20:
+	        case 53:
 	            this.enterOuterAlt(localctx, 1);
-	            this.state = 317;
+	            this.state = 326;
 	            this.number();
 	            break;
-	        case 46:
+	        case 52:
 	            this.enterOuterAlt(localctx, 2);
-	            this.state = 318;
+	            this.state = 327;
 	            this.match(WDTPDParser.STRING);
 	            break;
-	        case 48:
+	        case 54:
 	            this.enterOuterAlt(localctx, 3);
-	            this.state = 319;
+	            this.state = 328;
 	            this.match(WDTPDParser.BOOLEAN);
 	            break;
-	        case 49:
+	        case 55:
 	            this.enterOuterAlt(localctx, 4);
-	            this.state = 320;
+	            this.state = 329;
 	            this.match(WDTPDParser.NULL);
 	            break;
 	        default:
@@ -1696,19 +1746,19 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	number() {
 	    let localctx = new NumberContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 66, WDTPDParser.RULE_number);
+	    this.enterRule(localctx, 70, WDTPDParser.RULE_number);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 324;
+	        this.state = 333;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        if(_la===16) {
-	            this.state = 323;
+	        if(_la===20) {
+	            this.state = 332;
 	            this.match(WDTPDParser.DASH);
 	        }
 
-	        this.state = 326;
+	        this.state = 335;
 	        this.match(WDTPDParser.INTEGER);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -1728,10 +1778,10 @@ export default class WDTPDParser extends antlr4.Parser {
 
 	endOfStatement() {
 	    let localctx = new EndOfStatementContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 68, WDTPDParser.RULE_endOfStatement);
+	    this.enterRule(localctx, 72, WDTPDParser.RULE_endOfStatement);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 328;
+	        this.state = 337;
 	        this.match(WDTPDParser.NL);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -1759,86 +1809,94 @@ WDTPDParser.T__4 = 5;
 WDTPDParser.T__5 = 6;
 WDTPDParser.T__6 = 7;
 WDTPDParser.T__7 = 8;
-WDTPDParser.COMMA = 9;
-WDTPDParser.NOT = 10;
-WDTPDParser.EXPONENT = 11;
-WDTPDParser.STAR = 12;
-WDTPDParser.SLASH = 13;
-WDTPDParser.PERCENT = 14;
-WDTPDParser.PLUS = 15;
-WDTPDParser.DASH = 16;
-WDTPDParser.LT = 17;
-WDTPDParser.GT = 18;
-WDTPDParser.LTE = 19;
-WDTPDParser.GTE = 20;
-WDTPDParser.DOUBLE_EQUAL = 21;
-WDTPDParser.DNE = 22;
-WDTPDParser.DOUBLE_AMPERSAND = 23;
-WDTPDParser.DOUBLE_PIPE = 24;
-WDTPDParser.COLON = 25;
-WDTPDParser.OPEN_PAREN = 26;
-WDTPDParser.CLOSE_PAREN = 27;
-WDTPDParser.OPEN_BRACKET = 28;
-WDTPDParser.CLOSE_BRACKET = 29;
-WDTPDParser.ABS = 30;
-WDTPDParser.LEN = 31;
-WDTPDParser.SQRT = 32;
-WDTPDParser.INT_FUNC = 33;
-WDTPDParser.IF = 34;
-WDTPDParser.THEN = 35;
-WDTPDParser.END_IF = 36;
-WDTPDParser.WHILE = 37;
-WDTPDParser.END_WHILE = 38;
-WDTPDParser.FOR = 39;
-WDTPDParser.TO = 40;
-WDTPDParser.STEP = 41;
-WDTPDParser.NEXT = 42;
-WDTPDParser.INPUT = 43;
-WDTPDParser.OUTPUT = 44;
-WDTPDParser.ID = 45;
-WDTPDParser.STRING = 46;
-WDTPDParser.INTEGER = 47;
-WDTPDParser.BOOLEAN = 48;
-WDTPDParser.NULL = 49;
-WDTPDParser.COMMENT = 50;
-WDTPDParser.WS = 51;
-WDTPDParser.NL = 52;
+WDTPDParser.T__8 = 9;
+WDTPDParser.T__9 = 10;
+WDTPDParser.T__10 = 11;
+WDTPDParser.EQUALS = 12;
+WDTPDParser.COMMA = 13;
+WDTPDParser.NOT = 14;
+WDTPDParser.EXPONENT = 15;
+WDTPDParser.STAR = 16;
+WDTPDParser.SLASH = 17;
+WDTPDParser.PERCENT = 18;
+WDTPDParser.PLUS = 19;
+WDTPDParser.DASH = 20;
+WDTPDParser.LT = 21;
+WDTPDParser.GT = 22;
+WDTPDParser.LTE = 23;
+WDTPDParser.GTE = 24;
+WDTPDParser.EQEQ = 25;
+WDTPDParser.DNE = 26;
+WDTPDParser.AMPERSAND = 27;
+WDTPDParser.DOUBLE_AMPERSAND = 28;
+WDTPDParser.PIPE = 29;
+WDTPDParser.DOUBLE_PIPE = 30;
+WDTPDParser.COLON = 31;
+WDTPDParser.OPEN_PAREN = 32;
+WDTPDParser.CLOSE_PAREN = 33;
+WDTPDParser.OPEN_BRACKET = 34;
+WDTPDParser.CLOSE_BRACKET = 35;
+WDTPDParser.ABS = 36;
+WDTPDParser.LEN = 37;
+WDTPDParser.SQRT = 38;
+WDTPDParser.INT_FUNC = 39;
+WDTPDParser.IF = 40;
+WDTPDParser.THEN = 41;
+WDTPDParser.END_IF = 42;
+WDTPDParser.WHILE = 43;
+WDTPDParser.END_WHILE = 44;
+WDTPDParser.FOR = 45;
+WDTPDParser.TO = 46;
+WDTPDParser.STEP = 47;
+WDTPDParser.NEXT = 48;
+WDTPDParser.INPUT = 49;
+WDTPDParser.OUTPUT = 50;
+WDTPDParser.ID = 51;
+WDTPDParser.STRING = 52;
+WDTPDParser.INTEGER = 53;
+WDTPDParser.BOOLEAN = 54;
+WDTPDParser.NULL = 55;
+WDTPDParser.COMMENT = 56;
+WDTPDParser.WSSKIP = 57;
+WDTPDParser.NL = 58;
 
 WDTPDParser.RULE_prog = 0;
 WDTPDParser.RULE_stmt_list = 1;
 WDTPDParser.RULE_stmt = 2;
-WDTPDParser.RULE_id_list = 3;
-WDTPDParser.RULE_input = 4;
-WDTPDParser.RULE_output = 5;
-WDTPDParser.RULE_assignment_list = 6;
-WDTPDParser.RULE_assignment = 7;
-WDTPDParser.RULE_if_stmt = 8;
-WDTPDParser.RULE_multi_line_if_stmt = 9;
-WDTPDParser.RULE_single_line_if_stmt = 10;
-WDTPDParser.RULE_while_stmt = 11;
-WDTPDParser.RULE_for_loop_stmt = 12;
-WDTPDParser.RULE_params = 13;
-WDTPDParser.RULE_expression = 14;
-WDTPDParser.RULE_conditional_or_expr = 15;
-WDTPDParser.RULE_conditional_and_expr = 16;
-WDTPDParser.RULE_or_expr = 17;
-WDTPDParser.RULE_and_expr = 18;
-WDTPDParser.RULE_equality_expr = 19;
-WDTPDParser.RULE_relational_expr = 20;
-WDTPDParser.RULE_additive_expr = 21;
-WDTPDParser.RULE_multiplicative_expr = 22;
-WDTPDParser.RULE_exponent_expr = 23;
-WDTPDParser.RULE_unary_expr = 24;
-WDTPDParser.RULE_primary_expr = 25;
-WDTPDParser.RULE_paren_expr = 26;
-WDTPDParser.RULE_function_call = 27;
-WDTPDParser.RULE_function_name = 28;
-WDTPDParser.RULE_array_reference = 29;
-WDTPDParser.RULE_str_slice = 30;
-WDTPDParser.RULE_id = 31;
-WDTPDParser.RULE_literal = 32;
-WDTPDParser.RULE_number = 33;
-WDTPDParser.RULE_endOfStatement = 34;
+WDTPDParser.RULE_reference_list = 3;
+WDTPDParser.RULE_argument_list = 4;
+WDTPDParser.RULE_input = 5;
+WDTPDParser.RULE_output = 6;
+WDTPDParser.RULE_assignment_list = 7;
+WDTPDParser.RULE_assignment = 8;
+WDTPDParser.RULE_reference = 9;
+WDTPDParser.RULE_if_stmt = 10;
+WDTPDParser.RULE_multi_line_if_stmt = 11;
+WDTPDParser.RULE_single_line_if_stmt = 12;
+WDTPDParser.RULE_while_stmt = 13;
+WDTPDParser.RULE_for_loop_stmt = 14;
+WDTPDParser.RULE_params = 15;
+WDTPDParser.RULE_expression = 16;
+WDTPDParser.RULE_conditional_or_expr = 17;
+WDTPDParser.RULE_conditional_and_expr = 18;
+WDTPDParser.RULE_or_expr = 19;
+WDTPDParser.RULE_and_expr = 20;
+WDTPDParser.RULE_equality_expr = 21;
+WDTPDParser.RULE_relational_expr = 22;
+WDTPDParser.RULE_additive_expr = 23;
+WDTPDParser.RULE_multiplicative_expr = 24;
+WDTPDParser.RULE_exponent_expr = 25;
+WDTPDParser.RULE_unary_expr = 26;
+WDTPDParser.RULE_primary_expr = 27;
+WDTPDParser.RULE_paren_expr = 28;
+WDTPDParser.RULE_function_call = 29;
+WDTPDParser.RULE_function_name = 30;
+WDTPDParser.RULE_array_reference = 31;
+WDTPDParser.RULE_str_slice = 32;
+WDTPDParser.RULE_id = 33;
+WDTPDParser.RULE_literal = 34;
+WDTPDParser.RULE_number = 35;
+WDTPDParser.RULE_endOfStatement = 36;
 
 class ProgContext extends antlr4.ParserRuleContext {
 
@@ -1995,7 +2053,7 @@ class StmtContext extends antlr4.ParserRuleContext {
 
 
 
-class Id_listContext extends antlr4.ParserRuleContext {
+class Reference_listContext extends antlr4.ParserRuleContext {
 
     constructor(parser, parent, invokingState) {
         if(parent===undefined) {
@@ -2006,17 +2064,17 @@ class Id_listContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = WDTPDParser.RULE_id_list;
+        this.ruleIndex = WDTPDParser.RULE_reference_list;
     }
 
-	id = function(i) {
+	reference = function(i) {
 	    if(i===undefined) {
 	        i = null;
 	    }
 	    if(i===null) {
-	        return this.getTypedRuleContexts(IdContext);
+	        return this.getTypedRuleContexts(ReferenceContext);
 	    } else {
-	        return this.getTypedRuleContext(IdContext,i);
+	        return this.getTypedRuleContext(ReferenceContext,i);
 	    }
 	};
 
@@ -2034,13 +2092,67 @@ class Id_listContext extends antlr4.ParserRuleContext {
 
 	enterRule(listener) {
 	    if(listener instanceof WDTPDListener ) {
-	        listener.enterId_list(this);
+	        listener.enterReference_list(this);
 		}
 	}
 
 	exitRule(listener) {
 	    if(listener instanceof WDTPDListener ) {
-	        listener.exitId_list(this);
+	        listener.exitReference_list(this);
+		}
+	}
+
+
+}
+
+
+
+class Argument_listContext extends antlr4.ParserRuleContext {
+
+    constructor(parser, parent, invokingState) {
+        if(parent===undefined) {
+            parent = null;
+        }
+        if(invokingState===undefined || invokingState===null) {
+            invokingState = -1;
+        }
+        super(parent, invokingState);
+        this.parser = parser;
+        this.ruleIndex = WDTPDParser.RULE_argument_list;
+    }
+
+	expression = function(i) {
+	    if(i===undefined) {
+	        i = null;
+	    }
+	    if(i===null) {
+	        return this.getTypedRuleContexts(ExpressionContext);
+	    } else {
+	        return this.getTypedRuleContext(ExpressionContext,i);
+	    }
+	};
+
+	COMMA = function(i) {
+		if(i===undefined) {
+			i = null;
+		}
+	    if(i===null) {
+	        return this.getTokens(WDTPDParser.COMMA);
+	    } else {
+	        return this.getToken(WDTPDParser.COMMA, i);
+	    }
+	};
+
+
+	enterRule(listener) {
+	    if(listener instanceof WDTPDListener ) {
+	        listener.enterArgument_list(this);
+		}
+	}
+
+	exitRule(listener) {
+	    if(listener instanceof WDTPDListener ) {
+	        listener.exitArgument_list(this);
 		}
 	}
 
@@ -2067,8 +2179,8 @@ class InputContext extends antlr4.ParserRuleContext {
 	    return this.getToken(WDTPDParser.INPUT, 0);
 	};
 
-	id_list() {
-	    return this.getTypedRuleContext(Id_listContext,0);
+	reference_list() {
+	    return this.getTypedRuleContext(Reference_listContext,0);
 	};
 
 	enterRule(listener) {
@@ -2102,15 +2214,8 @@ class OutputContext extends antlr4.ParserRuleContext {
         this.ruleIndex = WDTPDParser.RULE_output;
     }
 
-	expression = function(i) {
-	    if(i===undefined) {
-	        i = null;
-	    }
-	    if(i===null) {
-	        return this.getTypedRuleContexts(ExpressionContext);
-	    } else {
-	        return this.getTypedRuleContext(ExpressionContext,i);
-	    }
+	argument_list() {
+	    return this.getTypedRuleContext(Argument_listContext,0);
 	};
 
 	enterRule(listener) {
@@ -2198,16 +2303,16 @@ class AssignmentContext extends antlr4.ParserRuleContext {
         this.ruleIndex = WDTPDParser.RULE_assignment;
     }
 
+	reference() {
+	    return this.getTypedRuleContext(ReferenceContext,0);
+	};
+
+	EQUALS() {
+	    return this.getToken(WDTPDParser.EQUALS, 0);
+	};
+
 	expression() {
 	    return this.getTypedRuleContext(ExpressionContext,0);
-	};
-
-	id() {
-	    return this.getTypedRuleContext(IdContext,0);
-	};
-
-	array_reference() {
-	    return this.getTypedRuleContext(Array_referenceContext,0);
 	};
 
 	enterRule(listener) {
@@ -2219,6 +2324,45 @@ class AssignmentContext extends antlr4.ParserRuleContext {
 	exitRule(listener) {
 	    if(listener instanceof WDTPDListener ) {
 	        listener.exitAssignment(this);
+		}
+	}
+
+
+}
+
+
+
+class ReferenceContext extends antlr4.ParserRuleContext {
+
+    constructor(parser, parent, invokingState) {
+        if(parent===undefined) {
+            parent = null;
+        }
+        if(invokingState===undefined || invokingState===null) {
+            invokingState = -1;
+        }
+        super(parent, invokingState);
+        this.parser = parser;
+        this.ruleIndex = WDTPDParser.RULE_reference;
+    }
+
+	id() {
+	    return this.getTypedRuleContext(IdContext,0);
+	};
+
+	array_reference() {
+	    return this.getTypedRuleContext(Array_referenceContext,0);
+	};
+
+	enterRule(listener) {
+	    if(listener instanceof WDTPDListener ) {
+	        listener.enterReference(this);
+		}
+	}
+
+	exitRule(listener) {
+	    if(listener instanceof WDTPDListener ) {
+	        listener.exitReference(this);
 		}
 	}
 
@@ -2617,10 +2761,6 @@ class Conditional_or_exprContext extends antlr4.ParserRuleContext {
 	    }
 	};
 
-	DOUBLE_PIPE() {
-	    return this.getToken(WDTPDParser.DOUBLE_PIPE, 0);
-	};
-
 	enterRule(listener) {
 	    if(listener instanceof WDTPDListener ) {
 	        listener.enterConditional_or_expr(this);
@@ -2658,10 +2798,6 @@ class Conditional_and_exprContext extends antlr4.ParserRuleContext {
 
 	conditional_and_expr() {
 	    return this.getTypedRuleContext(Conditional_and_exprContext,0);
-	};
-
-	DOUBLE_AMPERSAND() {
-	    return this.getToken(WDTPDParser.DOUBLE_AMPERSAND, 0);
 	};
 
 	enterRule(listener) {
@@ -2703,6 +2839,10 @@ class Or_exprContext extends antlr4.ParserRuleContext {
 	    return this.getTypedRuleContext(Or_exprContext,0);
 	};
 
+	PIPE() {
+	    return this.getToken(WDTPDParser.PIPE, 0);
+	};
+
 	enterRule(listener) {
 	    if(listener instanceof WDTPDListener ) {
 	        listener.enterOr_expr(this);
@@ -2742,6 +2882,10 @@ class And_exprContext extends antlr4.ParserRuleContext {
 	    return this.getTypedRuleContext(And_exprContext,0);
 	};
 
+	AMPERSAND() {
+	    return this.getToken(WDTPDParser.AMPERSAND, 0);
+	};
+
 	enterRule(listener) {
 	    if(listener instanceof WDTPDListener ) {
 	        listener.enterAnd_expr(this);
@@ -2779,14 +2923,6 @@ class Equality_exprContext extends antlr4.ParserRuleContext {
 
 	equality_expr() {
 	    return this.getTypedRuleContext(Equality_exprContext,0);
-	};
-
-	DOUBLE_EQUAL() {
-	    return this.getToken(WDTPDParser.DOUBLE_EQUAL, 0);
-	};
-
-	DNE() {
-	    return this.getToken(WDTPDParser.DNE, 0);
 	};
 
 	enterRule(listener) {
@@ -2834,14 +2970,6 @@ class Relational_exprContext extends antlr4.ParserRuleContext {
 
 	GT() {
 	    return this.getToken(WDTPDParser.GT, 0);
-	};
-
-	GTE() {
-	    return this.getToken(WDTPDParser.GTE, 0);
-	};
-
-	LTE() {
-	    return this.getToken(WDTPDParser.LTE, 0);
 	};
 
 	enterRule(listener) {
@@ -3063,8 +3191,8 @@ class Primary_exprContext extends antlr4.ParserRuleContext {
         this.ruleIndex = WDTPDParser.RULE_primary_expr;
     }
 
-	id() {
-	    return this.getTypedRuleContext(IdContext,0);
+	reference() {
+	    return this.getTypedRuleContext(ReferenceContext,0);
 	};
 
 	literal() {
@@ -3073,10 +3201,6 @@ class Primary_exprContext extends antlr4.ParserRuleContext {
 
 	function_call() {
 	    return this.getTypedRuleContext(Function_callContext,0);
-	};
-
-	array_reference() {
-	    return this.getTypedRuleContext(Array_referenceContext,0);
 	};
 
 	str_slice() {
@@ -3263,8 +3387,8 @@ class Array_referenceContext extends antlr4.ParserRuleContext {
 	    return this.getToken(WDTPDParser.OPEN_PAREN, 0);
 	};
 
-	additive_expr() {
-	    return this.getTypedRuleContext(Additive_exprContext,0);
+	argument_list() {
+	    return this.getTypedRuleContext(Argument_listContext,0);
 	};
 
 	CLOSE_PAREN() {
@@ -3506,11 +3630,13 @@ class EndOfStatementContext extends antlr4.ParserRuleContext {
 WDTPDParser.ProgContext = ProgContext; 
 WDTPDParser.Stmt_listContext = Stmt_listContext; 
 WDTPDParser.StmtContext = StmtContext; 
-WDTPDParser.Id_listContext = Id_listContext; 
+WDTPDParser.Reference_listContext = Reference_listContext; 
+WDTPDParser.Argument_listContext = Argument_listContext; 
 WDTPDParser.InputContext = InputContext; 
 WDTPDParser.OutputContext = OutputContext; 
 WDTPDParser.Assignment_listContext = Assignment_listContext; 
 WDTPDParser.AssignmentContext = AssignmentContext; 
+WDTPDParser.ReferenceContext = ReferenceContext; 
 WDTPDParser.If_stmtContext = If_stmtContext; 
 WDTPDParser.Multi_line_if_stmtContext = Multi_line_if_stmtContext; 
 WDTPDParser.Single_line_if_stmtContext = Single_line_if_stmtContext; 

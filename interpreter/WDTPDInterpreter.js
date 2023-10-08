@@ -59,11 +59,12 @@ export default class WDTPDInterpreter {
 
         this.functions = functions;
 
-        this.input = null;
+        this.input = [];
         this.output = console.log;
 
-        this.maxExecutions = 100;
+        this.maxExecutions = 10000;
         this.executions = 0;
+        this.stopped = false;
     }
 
     run(code) {
@@ -81,18 +82,33 @@ export default class WDTPDInterpreter {
         return true;
     }
 
+    getNextInInputStream() {
+        return this.input.length > 0 ? this.input.shift() : null;
+    }
+
     // Env: variable names are case insensitive
 
-    updateEnv(key, value) {
-        if (key.type == "id") {
-            this.env[key.id] = value;
+    updateEnv(ref, value) {
+        if (ref.type == "id") {
+            this.env[ref.id] = value;
+        } else if (ref.type == "array_reference") {
+            if (typeof this.env[ref.id] != "object") {
+                this.env[ref.id] = {};
+            } 
+            this.env[ref.id][this.evaluate(ref.index[0])] = value;
         } else {
             console.error("WDTPDInterpreter::updateEnv unimplemented", key);
         }
     }
 
-    getEnv(key) {
-        return this.env[key.id];
+    getEnv(ref) {
+        if (ref.type == "id") {
+            return this.env[ref.id];
+        } else if (ref.type == "array_reference") {
+            return this.env[ref.id][this.evaluate(ref.index[0])];
+        } else {
+            console.error("WDTPDInterpreter::getEnv unimplemented", key);
+        }
     }
 
     executeStmts(stmts) {
@@ -107,6 +123,7 @@ export default class WDTPDInterpreter {
         this.executions += 1;
         if (this.executions >= this.maxExecutions) {
             this.stopped = true;
+            console.log(this.env);
             throw "Program running for too long. Force quitting!";
         }
 
@@ -133,9 +150,18 @@ export default class WDTPDInterpreter {
             case "while_loop":
                 let conditionExpr = stmt.condition;
                 let whileLoopBody = stmt.stmts;
+
+                if (!this.evaluate(conditionExpr)) {
+                    this.capture("While loop never started");
+                    break;
+                }
+
+                let whileLoopIter = 0;
                 while (this.stopped == false && this.evaluate(conditionExpr)) {
+                    this.capture("While loop inter", ++whileLoopIter);
                     this.executeStmts(whileLoopBody);
                 }
+                this.capture("Exit while loop");
                 break;
             case "for_loop":
                 let forLoopInitAssignment = stmt.init;
@@ -145,19 +171,27 @@ export default class WDTPDInterpreter {
                 let forLoopBody = stmt.stmts;
 
                 this.execute(forLoopInitAssignment);
-                this.capture("Starting for loop", this.evaluate(key), "to", this.evaluate(stopCondExpr), "step", this.evaluate(stepExpr));
 
                 let LTE = () => this.evaluate(key) <= this.evaluate(stopCondExpr);
                 let GTE = () => this.evaluate(key) >= this.evaluate(stopCondExpr);
                 let forLoopCondition = this.evaluate(key) < this.evaluate(stopCondExpr) ? LTE : GTE;
+
+                if (!this.evaluate(forLoopCondition)) {
+                    this.capture("For loop never started");
+                    break;
+                }
+
+                let forLoopIter = 0;
                 while (forLoopCondition()) {
-                    this.capture("For loop body");
+                    this.capture("For loop iter", ++forLoopIter);
                     this.executeStmts(forLoopBody);
                     this.updateEnv(key, this.evaluate(key) + this.evaluate(stepExpr));
                 }
                 this.capture("Exit for loop");
                 break;
             case "input":
+                console.log(stmt);
+                stmt.refs.forEach((ref) => this.updateEnv(ref, this.getNextInInputStream()));
                 break;
             case "output":
                 let outputExprs = stmt.exprs;
@@ -174,7 +208,7 @@ export default class WDTPDInterpreter {
         if (!expr || isNumberLiteral(expr) || isStringLiteral(expr)) {
             return expr
         }
-        if (expr.type == "id") {
+        if (expr.type == "id" || expr.type == "array_reference") {
             return this.getEnv(expr);
         }
 
@@ -207,6 +241,10 @@ export default class WDTPDInterpreter {
         }
         console.error("WDTPDInterpreter::evaluate encountered bad", expr, typeof(expr));
         return null;
+    }
+
+    addInputStream(input) {
+        this.input.push(...input);
     }
 
     /**

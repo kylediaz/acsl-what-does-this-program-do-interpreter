@@ -27,20 +27,24 @@ function getRawContent(node, rawInput) {
 
 // Expressions
 
+function parseArgumentList(argList, rawInput) {
+  return argList.children
+    .filter((_, i) => i % 2 == 0)
+    .map((a) => parseExpression(a, rawInput));
+}
+
 function parseExpression(expr, rawInput) {
   while (
     expr.children &&
     expr.children.length == 1 &&
-    expr.children[0].ruleIndex
+    expr.children[0].ruleIndex &&
+    expr.ruleIndex != WDTPDParser.RULE_reference
   ) {
     expr = expr.children[0]
   }
 
-  if (expr.ruleIndex == WDTPDParser.RULE_id) {
-    return {
-      type: 'id',
-      id: getRawContent(expr, rawInput),
-    }
+  if (expr.ruleIndex == WDTPDParser.RULE_reference) {
+    return parseReference(expr, rawInput);
   }
 
   if (
@@ -127,30 +131,39 @@ function parseExpression(expr, rawInput) {
 
 // Assignments
 
-function parseLeftHandSide(node, rawInput) {
+function parseReferenceList(refs, rawInput) {
+  return refs.children
+    .filter((_, i) => i % 2 == 0)
+    .map((r) => parseReference(r, rawInput));
+}
+
+function parseReference(node, rawInput) {
+  if (node.ruleIndex == WDTPDParser.RULE_reference) {
+    node = node.children[0];
+  }
   if (node.ruleIndex == WDTPDParser.RULE_id) {
     return {
       type: 'id',
-      id: getRawContent(node, rawInput),
+      id: getRawContent(node, rawInput).toUpperCase(),
     }
   }
   if (node.ruleIndex == WDTPDParser.RULE_array_reference) {
-    let id = node.children[3]
-    let index = node.children[5]
+    let id = node.children[0]
+    let index = node.children[2]
     return {
       type: 'array_reference',
-      id: getRawContent(id, rawInput),
-      index: parseExpression(index),
+      id: getRawContent(id, rawInput).toUpperCase(),
+      index: parseArgumentList(index, rawInput),
     }
   }
 }
 
 function parseAssignment(assignment, rawInput) {
-  let leftHandSide = assignment.children[0]
-  let expression = assignment.children[2]
+  let leftHandSide = assignment.children[0].children[0];
+  let expression = assignment.children[2];
   return {
     type: 'assignment',
-    leftHandSide: parseLeftHandSide(leftHandSide, rawInput),
+    leftHandSide: parseReference(leftHandSide, rawInput),
     expression: parseExpression(expression, rawInput),
   }
 }
@@ -187,13 +200,13 @@ function parseIf(ifStmt, rawInput) {
     subStmt.ruleIndex == WDTPDParser.RULE_multi_line_if_stmt &&
     subStmt.children.length == 6
   ) {
-    onTrueBody = subStmt.children[5]
+    onTrueBody = subStmt.children[4]
     onFalseBody = null
   } else if (
     subStmt.ruleIndex == WDTPDParser.RULE_multi_line_if_stmt &&
     subStmt.children.length == 9
   ) {
-    onTrueBody = subStmt.children[5]
+    onTrueBody = subStmt.children[4]
     onFalseBody = subStmt.children[8]
   } else {
     throw ('WDTPDAST::parseIf unexpected subrule', subStmt.ruleIndex)
@@ -241,13 +254,19 @@ function parseWhileLoop(whileLoop, rawInput) {
 
 // IO
 
-function parseInput(stmt, rawInput) {}
+function parseInput(stmt, rawInput) {
+  let inputReferences = stmt.children[1];
+  return {
+    type: 'input',
+    refs: parseReferenceList(inputReferences, rawInput)
+  }
+}
 
 function parseOutput(stmt, rawInput) {
-  let outputExprs = stmt.children.slice(1)
+  let outputExprs = stmt.children.slice(1)[0]
   return {
     type: 'output',
-    exprs: outputExprs.map(expr => parseExpression(expr, rawInput)),
+    exprs: parseArgumentList(outputExprs, rawInput),
   }
 }
 

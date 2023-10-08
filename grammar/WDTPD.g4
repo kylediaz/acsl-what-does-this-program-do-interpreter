@@ -16,13 +16,15 @@ stmt:
     | assignment_list
     ;
 
-id_list: id (',' id)*;
+reference_list: reference (',' reference)*;
+argument_list: expression (',' expression)*;
 
-input: 'INPUT' id_list;
-output: 'OUTPUT' expression+;
+input: 'INPUT' reference_list;
+output: 'OUTPUT' argument_list;
 
 assignment_list: assignment (':' assignment)*;
-assignment: (id | array_reference) '=' expression;
+assignment: reference '=' expression;
+reference: id | array_reference;
 
 if_stmt: multi_line_if_stmt | single_line_if_stmt;
 
@@ -69,14 +71,14 @@ unary_expr
     | '!' unary_expr
     );
 
-primary_expr: id | literal | function_call | array_reference | str_slice | paren_expr;
+primary_expr: reference | literal | function_call | str_slice | paren_expr;
 
 paren_expr: '(' expression ')';
 
 function_call: function_name '(' expression ')';
 function_name: ABS | INT_FUNC | SQRT | LEN; 
 
-array_reference: id '(' additive_expr ')';
+array_reference: id '(' argument_list ')';
 str_slice: id '[' expression (':' expression)? ']';
 
 id: ID;
@@ -94,6 +96,7 @@ endOfStatement: NL<hidden>;
 
 // Lexer
 
+EQUALS: '=';
 COMMA: ',';
 NOT: '!';
 EXPONENT: ('^' | '↑');
@@ -104,12 +107,14 @@ PLUS: '+';
 DASH: '-';
 LT: '<';
 GT: '>';
-LTE: '<=';
-GTE: '>=';
-DOUBLE_EQUAL: '==';
-DNE: '!=';
-DOUBLE_AMPERSAND: '&&';
-DOUBLE_PIPE: '||';
+LTE: LT WS* EQUALS;
+GTE: '>' WS* '=';
+EQEQ: EQUALS WS* EQUALS;
+DNE: '!' WS* EQUALS;
+AMPERSAND: '&';
+DOUBLE_AMPERSAND: AMPERSAND WS* AMPERSAND;
+PIPE: '|';
+DOUBLE_PIPE: PIPE WS* PIPE;
 COLON: ':';
 OPEN_PAREN: '(';
 CLOSE_PAREN: ')';
@@ -159,6 +164,7 @@ COMMENT
    : '//' ~ [\r\n]* -> skip
    ;
 
-WS: [ \t]+ -> skip;
+fragment WS: [ \t]; 
+WSSKIP: WS+ -> skip;
    
 NL: ('\r'? '\n');

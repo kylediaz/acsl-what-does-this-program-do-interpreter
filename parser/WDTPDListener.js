@@ -32,12 +32,21 @@ export default class WDTPDListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
-	// Enter a parse tree produced by WDTPDParser#id_list.
-	enterId_list(ctx) {
+	// Enter a parse tree produced by WDTPDParser#reference_list.
+	enterReference_list(ctx) {
 	}
 
-	// Exit a parse tree produced by WDTPDParser#id_list.
-	exitId_list(ctx) {
+	// Exit a parse tree produced by WDTPDParser#reference_list.
+	exitReference_list(ctx) {
+	}
+
+
+	// Enter a parse tree produced by WDTPDParser#argument_list.
+	enterArgument_list(ctx) {
+	}
+
+	// Exit a parse tree produced by WDTPDParser#argument_list.
+	exitArgument_list(ctx) {
 	}
 
 
@@ -74,6 +83,15 @@ export default class WDTPDListener extends antlr4.tree.ParseTreeListener {
 
 	// Exit a parse tree produced by WDTPDParser#assignment.
 	exitAssignment(ctx) {
+	}
+
+
+	// Enter a parse tree produced by WDTPDParser#reference.
+	enterReference(ctx) {
+	}
+
+	// Exit a parse tree produced by WDTPDParser#reference.
+	exitReference(ctx) {
 	}
 
 
