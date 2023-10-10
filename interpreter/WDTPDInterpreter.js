@@ -176,7 +176,7 @@ export default class WDTPDInterpreter {
                 let GTE = () => this.evaluate(key) >= this.evaluate(stopCondExpr);
                 let forLoopCondition = this.evaluate(key) < this.evaluate(stopCondExpr) ? LTE : GTE;
 
-                if (!this.evaluate(forLoopCondition)) {
+                if (!forLoopCondition()) {
                     this.capture("For loop never started");
                     break;
                 }
